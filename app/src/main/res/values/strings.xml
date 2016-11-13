@@ -1,0 +1,43 @@
+<resources>
+    <!--General Strings-->
+    <string name="app_name">Lens Cap</string>
+    <string name="widgetpromo">Pro Tip: Add the Lens Cap widget to your homescreen to quickly and easily control Lens Cap!</string>
+
+    <!--Enable or Disable Device Admin Strings-->
+    <string name="enable_device_admin_button">Setup Device Administrator</string>
+    <string name="enable_device_admin_button_enabled">Device Administrator Enabled</string>
+    <string name="blank">Blank</string>
+    <string name="error_no_device_admin">"Not Device Admin, Please Enable in Settings"</string>
+
+    <!--Put on or take off lens cap strings-->
+    <string name="toggle_on_off">Put Lens Cap On or Take Off:</string>
+    <string name="lens_cap_status_off">Lens Cap Off</string>
+    <string name="lens_cap_status_off2">(Camera Enabled)</string>
+
+    <string name="lens_cap_status_on">Lens Cap On</string>
+    <string name="lens_cap_status_on2">(Camera Disabled)</string>
+
+    <string name="lensCapOn">PUT\nCAP\nON</string>
+    <string name="lensCapOff">TAKE\nCAP\nOFF</string>
+
+    <!--Device administrator specific strings-->
+    <string name="device_admin_dialog">Lens Cap needs your permission to disable the camera.
+        \n
+        \nOn the next screen, please activate device administrator for Lens Cap.</string>
+    <string name="OK">Continue</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="device_admin_description">Allow Lens Cap to disable the camera(s)</string>
+    <string name="admin_receiver_status">Status and stuff</string>
+    <string name="admin_receiver_status_enabled">Lens Cap Device Admin Activated</string>
+    <string name="admin_receiver_status_disable_warning">Deactivate Lens Cap\'s Device Administrator Permissions?</string>
+    <string name="admin_receiver_status_disabled">Lens Cap Device Admin Deactivated</string>
+    <string name="admin_receiver_status_pw_changed">Password Changed</string>
+
+    <!--Widget Strings-->
+    <string name="appwidget_text">Lens Cap On or Off</string>
+    <string name="add_widget">Add widget</string>
+    <string name="widget_title">Lens Cap Widget</string>
+
+
+</resources>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ownzordage.chrx.lenscap.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/enable_device_admin"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="0"
+            android:padding="16dp"
+            android:text="@string/enable_device_admin_button"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:theme="@style/AdminButton" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:text="@string/toggle_on_off"-->
+                <!--android:textAppearance="?android:textAppearanceLarge" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/lensCapOnButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="2"
+                    android:clickable="false"
+                    android:text="@string/lensCapOn"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:theme="@style/FlatButton" />
+
+
+                <ImageButton
+                    android:id="@+id/mainToggleButton"
+                    android:layout_width="0dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="8dp"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:clickable="false"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/lens" />
+
+                <Button
+                    android:id="@+id/lensCapOffButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="2"
+                    android:clickable="false"
+                    android:text="@string/lensCapOff"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:theme="@style/FlatButton" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lensCapStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/lens_cap_status_off"
+                android:textAppearance="?android:textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/lensCapStatus2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/lens_cap_status_off2"
+                android:textAppearance="?android:textAppearanceSmall" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#bbb"
+            android:layout_margin="12dp"/>
+        <TextView
+            android:id="@+id/WidgetPromo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/widgetpromo"
+            android:textAppearance="?android:textAppearanceSmall" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

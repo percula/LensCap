@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/lens_cap_widget"
+    android:minHeight="40dip"
+    android:minWidth="40dip"
+    android:previewImage="@drawable/lenscap"
+    android:updatePeriodMillis="3600000"
+    android:resizeMode="none"
+    android:widgetCategory="home_screen">
+</appwidget-provider>

@@ -2,21 +2,24 @@ package com.ownzordage.chrx.lenscap;
 
 import android.app.DialogFragment;
 import android.app.admin.DevicePolicyManager;
+import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RemoteViews;
 import android.widget.TextView;
+
+import com.ownzordage.chrx.lenscap.widget.LensCapWidgetProvider;
 
 public class MainActivity extends AppCompatActivity {
     LensCapDeviceAdmin lensCapDeviceAdmin;
     ComponentName mDeviceAdminSample;
     DevicePolicyManager mDPM;
-    WidgetIntentReceiver widgetIntentReceiver;
     Context mContext;
 
 
@@ -26,12 +29,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mContext = this;
-
-        mDPM = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
-        mDeviceAdminSample = new ComponentName(mContext, mDeviceAdminReceiver.class);
-
-        widgetIntentReceiver = new WidgetIntentReceiver();
-        lensCapDeviceAdmin = new LensCapDeviceAdmin(mDPM, mDeviceAdminSample);
 
         updateUI();
 
@@ -93,12 +90,14 @@ public class MainActivity extends AppCompatActivity {
         TextView lensCapStatus = (TextView) findViewById(R.id.lensCapStatus);
         TextView lensCapStatus2 = (TextView) findViewById(R.id.lensCapStatus2);
 
-        if (isActiveAdmin()) {
-            setAdminButton.setText(R.string.enable_device_admin_button_enabled);
-            setAdminButton.setEnabled(false);
+        LensCapActivator.Status cameraStatus = LensCapActivator.getStatus(mContext);
 
-            imageButton.setClickable(true);
-            if (mDPM.getCameraDisabled(mDeviceAdminSample)) {
+        switch (cameraStatus) {
+            case CAMERA_DISABLED:
+                setAdminButton.setText(R.string.enable_device_admin_button_enabled);
+                setAdminButton.setEnabled(false);
+                imageButton.setEnabled(true);
+
                 lensCapOffButton.setEnabled(true);
                 lensCapOnButton.setEnabled(false);
 
@@ -106,7 +105,12 @@ public class MainActivity extends AppCompatActivity {
                 lensCapStatus2.setText(getText(R.string.lens_cap_status_on2));
 
                 imageButton.setImageResource(R.drawable.lenscap);
-            } else {
+                break;
+            case CAMERA_ENABLED:
+                setAdminButton.setText(R.string.enable_device_admin_button_enabled);
+                setAdminButton.setEnabled(false);
+                imageButton.setEnabled(true);
+
                 lensCapOnButton.setEnabled(true);
                 lensCapOffButton.setEnabled(false);
 
@@ -114,42 +118,33 @@ public class MainActivity extends AppCompatActivity {
                 lensCapStatus2.setText(getText(R.string.lens_cap_status_off2));
 
                 imageButton.setImageResource(R.drawable.lens);
-            }
-        } else {
-            setAdminButton.setText(R.string.enable_device_admin_button);
-            setAdminButton.setEnabled(true);
+                break;
+            default:
+                setAdminButton.setText(R.string.enable_device_admin_button);
+                setAdminButton.setEnabled(true);
 
-            lensCapOnButton.setEnabled(false);
-            lensCapOffButton.setEnabled(false);
+                lensCapOnButton.setEnabled(false);
+                lensCapOffButton.setEnabled(false);
 
-            imageButton.setEnabled(false);
-            imageButton.setImageResource(R.drawable.lens);
+                imageButton.setEnabled(false);
+                imageButton.setImageResource(R.drawable.lens);
+                break;
         }
 
         updateWidget();
     }
 
     private void updateWidget() {
-        RemoteViews remoteViews = new RemoteViews(this.getPackageName(), R.layout.lens_cap_widget);
-
-        if (isActiveAdmin()) {
-            if (mDPM.getCameraDisabled(mDeviceAdminSample)) {
-                remoteViews.setImageViewResource(R.id.widget_image, R.drawable.lenscap);
-            } else {
-                remoteViews.setImageViewResource(R.id.widget_image, R.drawable.lens);
-            }
-            LensCapWidget.pushWidgetUpdate(this.getApplicationContext(), remoteViews);
-        }
+        // Register an onClickListener
+        Log.v("updateWidget", "START");
+        Intent intent = new Intent(this, LensCapWidgetProvider.class);
+        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+        sendBroadcast(intent);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-    }
-
-
-    private boolean isActiveAdmin() {
-        return mDPM.isAdminActive(mDeviceAdminSample);
     }
 
 }

@@ -6,6 +6,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 import com.ownzordage.chrx.lenscap.LensCapActivator;
@@ -20,6 +21,7 @@ public class LensCapWidgetProvider extends AppWidgetProvider {
     // Got help for widget from http://www.androidauthority.com/create-simple-android-widget-608975/
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+        Log.v("onUpdate", "START");
         // Get data
         LensCapActivator.Status cameraStatus = LensCapActivator.getStatus(context);
 
@@ -58,18 +60,19 @@ public class LensCapWidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.v("onReceive", "START");
         // Only toggle the lens cap when pressed. The widgets automatically UPDATE on system
         // start and finish, so this logic needs to be here if the setting should stay the same
         if (intent.getAction().equals(ACTION_WIDGET_TOGGLE)) {
             // Toggle the lens cap
             LensCapActivator.toggleLensCap(context);
-
-            // Update the graphics
-            ComponentName lensCapWidgetComponent = new ComponentName(context, LensCapWidgetProvider.class);
-            AppWidgetManager manager = AppWidgetManager.getInstance(context);
-            int[] appWidgetIds = manager.getAppWidgetIds(lensCapWidgetComponent);
-            onUpdate(context,manager,appWidgetIds);
         }
-        super.onReceive(context, intent);
+
+        // Update the graphics (calling Super() did not work to update the widget after
+        // changing settings in MainActivity
+        ComponentName lensCapWidgetComponent = new ComponentName(context, LensCapWidgetProvider.class);
+        AppWidgetManager manager = AppWidgetManager.getInstance(context);
+        int[] appWidgetIds = manager.getAppWidgetIds(lensCapWidgetComponent);
+        onUpdate(context,manager,appWidgetIds);
     }
 }

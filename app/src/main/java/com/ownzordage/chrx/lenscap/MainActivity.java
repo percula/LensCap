@@ -1,9 +1,7 @@
 package com.ownzordage.chrx.lenscap;
 
 import android.app.DialogFragment;
-import android.app.admin.DevicePolicyManager;
 import android.appwidget.AppWidgetManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,11 +15,7 @@ import android.widget.TextView;
 import com.ownzordage.chrx.lenscap.widget.LensCapWidgetProvider;
 
 public class MainActivity extends AppCompatActivity {
-    LensCapDeviceAdmin lensCapDeviceAdmin;
-    ComponentName mDeviceAdminSample;
-    DevicePolicyManager mDPM;
     Context mContext;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Implement a click
+                LensCapActivator.toggleLensCap(mContext); //true
+                updateUI();
             }
         });
     }

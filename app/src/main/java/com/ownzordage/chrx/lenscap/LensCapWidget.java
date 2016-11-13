@@ -1,4 +1,4 @@
-package com.ownzordage.chrx.lenscap.widget;
+package com.ownzordage.chrx.lenscap;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -9,13 +9,10 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-import com.ownzordage.chrx.lenscap.LensCapActivator;
-import com.ownzordage.chrx.lenscap.R;
-
 /**
  * Implementation of App Widget functionality.
  */
-public class LensCapWidgetProvider extends AppWidgetProvider {
+public class LensCapWidget extends AppWidgetProvider {
     public static String ACTION_WIDGET_TOGGLE = "com.ownzordage.chrx.lenscap.TOGGLE";
 
     // Got help for widget from http://www.androidauthority.com/create-simple-android-widget-608975/
@@ -44,7 +41,7 @@ public class LensCapWidgetProvider extends AppWidgetProvider {
             }
 
             // Register an onClickListener
-            Intent clickIntent = new Intent(context, LensCapWidgetProvider.class);
+            Intent clickIntent = new Intent(context, LensCapWidget.class);
             clickIntent.setAction(ACTION_WIDGET_TOGGLE);
             clickIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,
                     appWidgetIds);
@@ -70,7 +67,7 @@ public class LensCapWidgetProvider extends AppWidgetProvider {
 
         // Update the graphics (calling Super() did not work to update the widget after
         // changing settings in MainActivity
-        ComponentName lensCapWidgetComponent = new ComponentName(context, LensCapWidgetProvider.class);
+        ComponentName lensCapWidgetComponent = new ComponentName(context, LensCapWidget.class);
         AppWidgetManager manager = AppWidgetManager.getInstance(context);
         int[] appWidgetIds = manager.getAppWidgetIds(lensCapWidgetComponent);
         onUpdate(context,manager,appWidgetIds);

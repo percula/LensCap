@@ -29,45 +29,8 @@
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
-        <!--<receiver android:name="com.ownzordage.chrx.lenscap.LensCapWidget">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />-->
-                <!--<action android:name="android.appwidget.action.APPWIDGET_RESTORED" />-->
-                <!--<action android:name="android.appwidget.action.APPWIDGET_ENABLED" />-->
-            <!--</intent-filter>-->
 
-            <!--<meta-data-->
-                <!--android:name="android.appwidget.provider"-->
-                <!--android:resource="@xml/lens_cap_widget_info" />-->
-        <!--</receiver>-->
-        <!--<receiver-->
-            <!--android:name="com.ownzordage.chrx.lenscap.WidgetIntentReceiver"-->
-            <!--android:label="widgetBroadcastReceiver"-->
-            <!--android:enabled="true">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.example.chrx.lenscap.TOGGLE" />-->
-                <!--<action android:name="com.example.chrx.lenscap.UPDATE" />-->
-            <!--</intent-filter>-->
-
-            <!--<meta-data-->
-                <!--android:name="android.appwidget.provider"-->
-                <!--android:resource="@xml/lens_cap_widget_info" />-->
-        <!--</receiver>-->
-
-        <!--Widget -->
-        <!--<receiver-->
-            <!--android:name=".widget.LensCapWidgetProvider"-->
-            <!--android:label="@string/widget_title" >-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />-->
-                <!--<action android:name="com.example.chrx.lenscap.UPDATE" />-->
-            <!--</intent-filter>-->
-            <!--<meta-data android:name="android.appwidget.provider"-->
-                <!--android:resource="@xml/lens_cap_widget_info" />-->
-        <!--</receiver>-->
-        <!--<service android:name=".widget.LensCapWidgetIntentService" />-->
-
-        <receiver android:name=".widget.LensCapWidgetProvider" >
+        <receiver android:name=".LensCapWidget" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.ownzordage.chrx.lenscap.TOGGLE" />

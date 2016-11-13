@@ -12,8 +12,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.ownzordage.chrx.lenscap.widget.LensCapWidgetProvider;
-
 public class MainActivity extends AppCompatActivity {
     Context mContext;
 
@@ -132,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
     private void updateWidget() {
         // Register an onClickListener
         Log.v("updateWidget", "START");
-        Intent intent = new Intent(this, LensCapWidgetProvider.class);
+        Intent intent = new Intent(this, LensCapWidget.class);
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
         sendBroadcast(intent);
     }

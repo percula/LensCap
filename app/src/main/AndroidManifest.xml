@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ownzordage.chrx.lenscap">
+
     <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+
     <application
         android:allowBackup="true"
+        android:enabled="true"
         android:icon="@drawable/lenscap"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:enabled="true">
-        <activity android:name="com.ownzordage.chrx.lenscap.MainActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <receiver
-            android:name="com.ownzordage.chrx.lenscap.mDeviceAdminReceiver"
+            android:name=".mDeviceAdminReceiver"
             android:description="@string/device_admin_description"
             android:label="Lens Cap"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
@@ -29,15 +32,30 @@
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
-
-        <receiver android:name=".LensCapWidget" >
+        <receiver android:name=".LensCapWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.ownzordage.chrx.lenscap.TOGGLE" />
             </intent-filter>
-            <meta-data android:name="android.appwidget.provider"
+
+            <meta-data
+                android:name="android.appwidget.provider"
                 android:resource="@xml/lens_cap_widget_info" />
         </receiver>
+
+        <service
+            android:name=".LensCapTileService"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@drawable/qs_tile_enabled"
+            android:label="@string/qs_tile_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="25" />
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+                <action android:name="com.ownzordage.chrx.lenscap.TOGGLE" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

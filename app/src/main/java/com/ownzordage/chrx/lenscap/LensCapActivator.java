@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class LensCapActivator {
 
-    public enum Status {
+    public static enum Status {
         CAMERA_DISABLED, CAMERA_ENABLED, DEVICE_ADMIN_DISABLED
     }
 

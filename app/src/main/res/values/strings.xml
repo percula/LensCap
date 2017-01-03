@@ -39,5 +39,10 @@
     <string name="add_widget">Add widget</string>
     <string name="widget_title">Lens Cap Widget</string>
 
+    <!--Quick Settings Tile Strings-->
+    <string name="qs_tile_title">Disable Camera</string>
+    <string name="qs_tile_enable">Enable Camera</string>
+    <string name="qs_tile_description">Description</string>
+
 
 </resources>

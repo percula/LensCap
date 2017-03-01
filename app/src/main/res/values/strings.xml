@@ -7,7 +7,12 @@
     <string name="enable_device_admin_button">Setup Device Administrator</string>
     <string name="enable_device_admin_button_enabled">Device Administrator Enabled</string>
     <string name="blank">Blank</string>
-    <string name="error_no_device_admin">"Not Device Admin, Please Enable in Settings"</string>
+    <string name="error_no_device_admin">Not Device Admin, Please Enable in Settings</string>
+    <string name="disable_device_admin">Disable Device Admin</string>
+    <string name="disable_device_admin_help_1">Click Lens Cap</string>
+    <string name="disable_device_admin_help_2">Then click \"Deactivate this device administrator\" on the next screen</string>
+    <string name="device_admin_already_disabled">Device Admin is already disabled.</string>
+    <string name="uninstall">Uninstall Lens Cap</string>
 
     <!--Put on or take off lens cap strings-->
     <string name="toggle_on_off">Put Lens Cap On or Take Off:</string>
@@ -43,6 +48,7 @@
     <string name="qs_tile_title">Disable Camera</string>
     <string name="qs_tile_enable">Enable Camera</string>
     <string name="qs_tile_description">Description</string>
+    <string name="how_to_qs">Quick Settings Tile Help</string>
 
 
 </resources>

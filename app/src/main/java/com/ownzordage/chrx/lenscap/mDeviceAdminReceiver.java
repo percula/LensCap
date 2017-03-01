@@ -42,14 +42,43 @@ public class mDeviceAdminReceiver extends DeviceAdminReceiver {
     public void onEnabled(Context context, Intent intent) {
         showToast(context, context.getString(R.string.admin_receiver_status_enabled));
         goBack(context);
+
+//        // Get Google Analytics tracker
+//        Tracker tracker = ((MyApplication) context.getApplicationContext()).getTracker();
+//
+//        // Send a screen view.
+//        tracker.send(new HitBuilders.EventBuilder()
+//                .setCategory("Device Administrator")
+//                .setAction("Device Administrator Enabled")
+//                .build());
     }
+
     @Override
     public CharSequence onDisableRequested(Context context, Intent intent) {
+//        // Get Google Analytics tracker
+//        Tracker tracker = ((MyApplication) context.getApplicationContext()).getTracker();
+//
+//        // Send a screen view.
+//        tracker.send(new HitBuilders.EventBuilder()
+//                .setCategory("Device Administrator")
+//                .setAction("Device Administrator Disable Prompted")
+//                .build());
+
         return context.getString(R.string.admin_receiver_status_disable_warning);
     }
+
     @Override
     public void onDisabled(Context context, Intent intent) {
         showToast(context, context.getString(R.string.admin_receiver_status_disabled));
+
+//        // Get Google Analytics tracker
+//        Tracker tracker = ((MyApplication) context.getApplicationContext()).getTracker();
+//
+//        // Send a screen view.
+//        tracker.send(new HitBuilders.EventBuilder()
+//                .setCategory("Device Administrator")
+//                .setAction("Device Administrator Disabled")
+//                .build());
     }
 //    @Override
 //    public void onPasswordChanged(Context context, Intent intent) {

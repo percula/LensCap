@@ -35,6 +35,7 @@ public class LensCapActivator {
                 // If no device administrator, send the user straight to the settings page with a help toast
                 Intent intent = new Intent();
                 intent.setComponent(new ComponentName("com.android.settings","com.android.settings.DeviceAdminSettings"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
                 status = context.getResources().getString(R.string.error_no_device_admin);
                 break;
@@ -54,6 +55,20 @@ public class LensCapActivator {
             }
         } else {
             return Status.DEVICE_ADMIN_DISABLED;
+        }
+    }
+
+    public static void disableDeviceAdmin(Context context) {
+        if (LensCapActivator.getStatus(context) != LensCapActivator.Status.DEVICE_ADMIN_DISABLED) {
+            // If no device administrator, send the user straight to the settings page with a help toast
+            Intent intent = new Intent();
+            intent.setComponent(new ComponentName("com.android.settings", "com.android.settings.DeviceAdminSettings"));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+            Toast.makeText(context, R.string.disable_device_admin_help_1, Toast.LENGTH_LONG).show();
+            Toast.makeText(context, R.string.disable_device_admin_help_2, Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(context, R.string.device_admin_already_disabled, Toast.LENGTH_SHORT).show();
         }
     }
 }

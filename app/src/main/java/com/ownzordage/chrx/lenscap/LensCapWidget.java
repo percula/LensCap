@@ -53,6 +53,16 @@ public class LensCapWidget extends AppWidgetProvider {
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
+
+//        // Get Google Analytics tracker
+//        Tracker tracker = ((MyApplication) context.getApplicationContext()).getTracker();
+//
+//        // Send a screen view.
+//        tracker.send(new HitBuilders.EventBuilder()
+//                .setCategory("Widget")
+//                .setAction("Widget Update/Click")
+//                .setLabel(cameraStatus.toString())
+//                .build());
     }
 
     @Override
@@ -72,4 +82,34 @@ public class LensCapWidget extends AppWidgetProvider {
         int[] appWidgetIds = manager.getAppWidgetIds(lensCapWidgetComponent);
         onUpdate(context,manager,appWidgetIds);
     }
+
+    @Override
+    public void onEnabled(Context context) {
+        super.onEnabled(context);
+
+//        // Get Google Analytics tracker
+//        Tracker tracker = ((MyApplication) context.getApplicationContext()).getTracker();
+//
+//        // Send a screen view.
+//        tracker.send(new HitBuilders.EventBuilder()
+//                .setCategory("Widget")
+//                .setAction("Widget Enabled")
+//                .build());
+    }
+
+    @Override
+    public void onDisabled(Context context) {
+        super.onDisabled(context);
+
+//        // Get Google Analytics tracker
+//        Tracker tracker = ((MyApplication) context.getApplicationContext()).getTracker();
+//
+//        // Send a screen view.
+//        tracker.send(new HitBuilders.EventBuilder()
+//                .setCategory("Widget")
+//                .setAction("Widget Disabled")
+//                .build());
+    }
+
+
 }

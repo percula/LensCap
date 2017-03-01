@@ -2,15 +2,22 @@ package com.ownzordage.chrx.lenscap;
 
 import android.app.DialogFragment;
 import android.appwidget.AppWidgetManager;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import static com.ownzordage.chrx.lenscap.LensCapActivator.disableDeviceAdmin;
 
 public class MainActivity extends AppCompatActivity {
     Context mContext;
@@ -60,8 +67,59 @@ public class MainActivity extends AppCompatActivity {
                 updateUI();
             }
         });
+
+        // Start Analytics tracking
+//        ((MyApplication) getApplication()).startTracking();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.clear();
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            menu.findItem(R.id.action_qs_youtube).setVisible(true);
+        }
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.action_disable_device_admin:
+                disableDeviceAdmin(mContext);
+                return true;
+            case R.id.action_uninstall:
+                if (LensCapActivator.getStatus(mContext) != LensCapActivator.Status.DEVICE_ADMIN_DISABLED) {
+                    disableDeviceAdmin(mContext);
+                } else {
+                    Uri packageUri = Uri.parse("package:com.ownzordage.chrx.lenscap");
+                    Intent uninstallIntent =
+                            new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri);
+                    startActivity(uninstallIntent);
+                }
+                return true;
+            case R.id.action_qs_youtube:
+                watchYoutubeVideo("ZdsKdM-IMiQ");
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void watchYoutubeVideo(String id){
+        Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
+        Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("http://www.youtube.com/watch?v=" + id));
+        try {
+            startActivity(appIntent);
+        } catch (ActivityNotFoundException ex) {
+            startActivity(webIntent);
+        }
+    }
 
     @Override
     protected void onRestart() {

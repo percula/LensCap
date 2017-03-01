@@ -1,12 +1,19 @@
 package com.ownzordage.chrx.lenscap;
 
 import android.app.DialogFragment;
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentSender;
+import android.content.ServiceConnection;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -16,11 +23,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.vending.billing.IInAppBillingService;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 import static com.ownzordage.chrx.lenscap.LensCapActivator.disableDeviceAdmin;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String LOG_TAG = MainActivity.class.getSimpleName();
+
     Context mContext;
+    IInAppBillingService mService;
+    ArrayList<InAppPurchaseItem> inAppPurchaseItems = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +88,132 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Start Analytics tracking
-//        ((MyApplication) getApplication()).startTracking();
+        ServiceConnection mServiceConn = new ServiceConnection() {
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                mService = null;
+            }
+
+            @Override
+            public void onServiceConnected(ComponentName name,
+                                           IBinder service) {
+                mService = IInAppBillingService.Stub.asInterface(service);
+
+                getInAppPurchases();
+            }
+        };
+
+        Intent serviceIntent =
+                new Intent("com.android.vending.billing.InAppBillingService.BIND");
+        serviceIntent.setPackage("com.android.vending");
+        bindService(serviceIntent, mServiceConn, Context.BIND_AUTO_CREATE);
+
     }
+
+    private void getInAppPurchases() {
+        ArrayList<String> skuList = new ArrayList<String> ();
+        skuList.add("one");
+        skuList.add("two");
+        skuList.add("three");
+        skuList.add("four");
+        Bundle querySkus = new Bundle();
+        querySkus.putStringArrayList("ITEM_ID_LIST", skuList);
+
+        GetSKUsTask getSkusTask = new GetSKUsTask();
+        getSkusTask.execute(querySkus);
+    }
+
+
+    private class GetSKUsTask extends AsyncTask<Bundle, Void, ArrayList<InAppPurchaseItem>> {
+        protected ArrayList<InAppPurchaseItem> doInBackground(Bundle ... input) {
+            Bundle querySkus = input[0];
+            ArrayList<InAppPurchaseItem> inAppPurchaseItems = new ArrayList<>();
+
+            try {
+                Bundle skuDetails = mService.getSkuDetails(3, getPackageName(), "inapp", querySkus);
+                int response = skuDetails.getInt("RESPONSE_CODE");
+                if (response == 0) {
+                    ArrayList<String> responseList = skuDetails.getStringArrayList("DETAILS_LIST");
+
+                    if (responseList != null && responseList.size() > 0) {
+                        for (String thisResponse : responseList) {
+                            JSONObject object = new JSONObject(thisResponse);
+                            String sku = object.getString("productId");
+                            String price = object.getString("price");
+                            inAppPurchaseItems.add(new InAppPurchaseItem(sku, price));
+                            Toast.makeText(mContext, sku + price, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+
+            } catch (RemoteException|JSONException e) {
+                Log.e(LOG_TAG, "Error getting skus", e);
+            }
+
+            return inAppPurchaseItems;
+        }
+
+        protected void onPostExecute(ArrayList<InAppPurchaseItem> results) {
+            inAppPurchaseItems.clear();
+            inAppPurchaseItems.addAll(results);
+        }
+    }
+
+    public void inAppPurchaseClick(View view) {
+        int id = view.getId();
+        if (inAppPurchaseItems.size() < 4) {
+            Toast.makeText(mContext, "In app purchases not loaded properly", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        switch(id) {
+            case (R.id.donate_one):
+                buyInAppPurchase(inAppPurchaseItems.get(0));
+                break;
+            case (R.id.donate_two):
+                buyInAppPurchase(inAppPurchaseItems.get(1));
+                break;
+            case (R.id.donate_three):
+                buyInAppPurchase(inAppPurchaseItems.get(2));
+                break;
+            case (R.id.donate_four):
+                buyInAppPurchase(inAppPurchaseItems.get(3));
+                break;
+        }
+    }
+
+    private void buyInAppPurchase(InAppPurchaseItem inAppPurchaseItem) {
+        try {
+            Bundle buyIntentBundle = mService.getBuyIntent(3, getPackageName(), inAppPurchaseItem.getSku(), "inapp", "");
+            if (buyIntentBundle.getInt("RESPONSE_CODE") == 0) {
+                PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
+                startIntentSenderForResult(pendingIntent.getIntentSender(), 1001, new Intent(),
+                        Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0));
+            }
+        } catch (RemoteException|IntentSender.SendIntentException e) {
+            Log.e(LOG_TAG, "Error completing in app purchase", e);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1001) {
+            int responseCode = data.getIntExtra("RESPONSE_CODE", 0);
+            String purchaseData = data.getStringExtra("INAPP_PURCHASE_DATA");
+            String dataSignature = data.getStringExtra("INAPP_DATA_SIGNATURE");
+
+            if (resultCode == RESULT_OK) {
+                try {
+                    JSONObject jo = new JSONObject(purchaseData);
+                    String sku = jo.getString("productId");
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -103,9 +103,9 @@
                 android:text="@string/lens_cap_status_off2"
                 android:textAppearance="?android:textAppearanceSmall" />
         </LinearLayout>
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:background="#bbb"
             android:layout_margin="12dp"/>
         <TextView
@@ -115,6 +115,52 @@
             android:gravity="center_horizontal"
             android:text="@string/widgetpromo"
             android:textAppearance="?android:textAppearanceSmall" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bbb"
+            android:layout_margin="12dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/donate"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/donate_one"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/donate_one"
+                android:onClick="inAppPurchaseClick"/>
+            <Button
+                android:id="@+id/donate_two"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/donate_two"
+                android:onClick="inAppPurchaseClick"/>
+            <Button
+                android:id="@+id/donate_three"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:text="@string/donate_three"
+                android:onClick="inAppPurchaseClick"/>
+            <Button
+                android:id="@+id/donate_four"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/donate_four"
+                android:onClick="inAppPurchaseClick"/>
+
+        </LinearLayout>
 
 
     </LinearLayout>

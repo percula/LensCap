@@ -18,13 +18,9 @@ public class LensCapWidget extends AppWidgetProvider {
     // Got help for widget from http://www.androidauthority.com/create-simple-android-widget-608975/
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-        Log.v("onUpdate", "START");
-        // Get data
         LensCapActivator.Status cameraStatus = LensCapActivator.getStatus(context);
 
-        // Perform this loop procedure for each widget
         for (int appWidgetId : appWidgetIds) {
-            // Get the remoteviews object
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.lens_cap_widget);
 
             // Add the data to the RemoteViews
@@ -53,16 +49,6 @@ public class LensCapWidget extends AppWidgetProvider {
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
-
-//        // Get Google Analytics tracker
-//        Tracker tracker = ((MyApplication) context.getApplicationContext()).getTracker();
-//
-//        // Send a screen view.
-//        tracker.send(new HitBuilders.EventBuilder()
-//                .setCategory("Widget")
-//                .setAction("Widget Update/Click")
-//                .setLabel(cameraStatus.toString())
-//                .build());
     }
 
     @Override
@@ -82,34 +68,5 @@ public class LensCapWidget extends AppWidgetProvider {
         int[] appWidgetIds = manager.getAppWidgetIds(lensCapWidgetComponent);
         onUpdate(context,manager,appWidgetIds);
     }
-
-    @Override
-    public void onEnabled(Context context) {
-        super.onEnabled(context);
-
-//        // Get Google Analytics tracker
-//        Tracker tracker = ((MyApplication) context.getApplicationContext()).getTracker();
-//
-//        // Send a screen view.
-//        tracker.send(new HitBuilders.EventBuilder()
-//                .setCategory("Widget")
-//                .setAction("Widget Enabled")
-//                .build());
-    }
-
-    @Override
-    public void onDisabled(Context context) {
-        super.onDisabled(context);
-
-//        // Get Google Analytics tracker
-//        Tracker tracker = ((MyApplication) context.getApplicationContext()).getTracker();
-//
-//        // Send a screen view.
-//        tracker.send(new HitBuilders.EventBuilder()
-//                .setCategory("Widget")
-//                .setAction("Widget Disabled")
-//                .build());
-    }
-
 
 }

@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                             String sku = object.getString("productId");
                             String price = object.getString("price");
                             inAppPurchaseItems.add(new InAppPurchaseItem(sku, price));
-                            Toast.makeText(mContext, sku + price, Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(mContext, sku + price, Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -156,6 +156,28 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(ArrayList<InAppPurchaseItem> results) {
             inAppPurchaseItems.clear();
             inAppPurchaseItems.addAll(results);
+            updateButtonText();
+        }
+    }
+
+    public void updateButtonText() {
+        Button inAppPurchaseOne = (Button) findViewById(R.id.donate_one);
+        Button inAppPurchaseTwo = (Button) findViewById(R.id.donate_two);
+        Button inAppPurchaseThree = (Button) findViewById(R.id.donate_three);
+        Button inAppPurchaseFour = (Button) findViewById(R.id.donate_four);
+
+        if (inAppPurchaseItems.size() < 4) {
+            Toast.makeText(mContext, "In app purchases not loaded properly", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        try {
+            inAppPurchaseOne.setText(findInAppPurchaseItem("one").getPrice());
+            inAppPurchaseTwo.setText(findInAppPurchaseItem("two").getPrice());
+            inAppPurchaseThree.setText(findInAppPurchaseItem("three").getPrice());
+            inAppPurchaseFour.setText(findInAppPurchaseItem("four").getPrice());
+        } catch (NullPointerException e) {
+            Log.e(LOG_TAG, "Couldn't assign prices", e);
         }
     }
 
@@ -167,30 +189,41 @@ public class MainActivity extends AppCompatActivity {
         }
         switch(id) {
             case (R.id.donate_one):
-                buyInAppPurchase(inAppPurchaseItems.get(0));
+                buyInAppPurchase(findInAppPurchaseItem("one"));
                 break;
             case (R.id.donate_two):
-                buyInAppPurchase(inAppPurchaseItems.get(1));
+                buyInAppPurchase(findInAppPurchaseItem("two"));
                 break;
             case (R.id.donate_three):
-                buyInAppPurchase(inAppPurchaseItems.get(2));
+                buyInAppPurchase(findInAppPurchaseItem("three"));
                 break;
             case (R.id.donate_four):
-                buyInAppPurchase(inAppPurchaseItems.get(3));
+                buyInAppPurchase(findInAppPurchaseItem("four"));
                 break;
         }
     }
 
-    private void buyInAppPurchase(InAppPurchaseItem inAppPurchaseItem) {
-        try {
-            Bundle buyIntentBundle = mService.getBuyIntent(3, getPackageName(), inAppPurchaseItem.getSku(), "inapp", "");
-            if (buyIntentBundle.getInt("RESPONSE_CODE") == 0) {
-                PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
-                startIntentSenderForResult(pendingIntent.getIntentSender(), 1001, new Intent(),
-                        Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0));
+    private InAppPurchaseItem findInAppPurchaseItem(String sku) {
+        for (int i = 0; i < inAppPurchaseItems.size(); i++) {
+            if (inAppPurchaseItems.get(i).getSku().equals(sku)) {
+                return inAppPurchaseItems.get(i);
             }
-        } catch (RemoteException|IntentSender.SendIntentException e) {
-            Log.e(LOG_TAG, "Error completing in app purchase", e);
+        }
+        return null;
+    }
+
+    private void buyInAppPurchase(InAppPurchaseItem inAppPurchaseItem) {
+        if (inAppPurchaseItem != null) {
+            try {
+                Bundle buyIntentBundle = mService.getBuyIntent(3, getPackageName(), inAppPurchaseItem.getSku(), "inapp", "");
+                if (buyIntentBundle.getInt("RESPONSE_CODE") == 0) {
+                    PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
+                    startIntentSenderForResult(pendingIntent.getIntentSender(), 1001, new Intent(),
+                            Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0));
+                }
+            } catch (RemoteException|IntentSender.SendIntentException e) {
+                Log.e(LOG_TAG, "Error completing in app purchase", e);
+            }
         }
     }
 

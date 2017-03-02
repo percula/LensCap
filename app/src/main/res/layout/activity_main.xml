@@ -107,11 +107,12 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#bbb"
-            android:layout_margin="12dp"/>
+            android:layout_margin="@dimen/vertical_padding"/>
         <TextView
             android:id="@+id/WidgetPromo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/vertical_padding"
             android:gravity="center_horizontal"
             android:text="@string/widgetpromo"
             android:textAppearance="?android:textAppearanceSmall" />
@@ -119,11 +120,12 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#bbb"
-            android:layout_margin="12dp"/>
+            android:layout_margin="@dimen/vertical_padding"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/donate"
+            android:layout_margin="@dimen/vertical_padding"
             android:textAppearance="?android:textAppearanceSmall"
             android:gravity="center_horizontal"/>
         <LinearLayout

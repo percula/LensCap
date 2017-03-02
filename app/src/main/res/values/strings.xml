@@ -51,11 +51,11 @@
     <string name="how_to_qs">Quick Settings Tile Help</string>
 
     <!--Donation Strings-->
-    <string name="donate">Like this app? Buy me some pi or tea!</string>
+    <string name="donate">Like this app? Buy me some pi!</string>
     <string name="donate_one">$1</string>
     <string name="donate_two">$2</string>
     <string name="donate_three">pi</string>
-    <string name="donate_four">$4</string>
+    <string name="donate_four">$5</string>
 
 
 </resources>

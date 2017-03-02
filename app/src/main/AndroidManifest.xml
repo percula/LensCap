@@ -6,6 +6,7 @@
     <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:enabled="true"
         android:icon="@drawable/lenscap"

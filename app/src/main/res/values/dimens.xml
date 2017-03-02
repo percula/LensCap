@@ -9,4 +9,15 @@ Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     -->
     <dimen name="widget_margin">16dp</dimen>
+    <dimen name="button_margin">8dp</dimen>
+
+    <!-- CardView dimensions-->
+    <dimen name="card_title_top_padding">24dp</dimen>
+    <dimen name="card_subtitle_top_padding">12dp</dimen>
+    <dimen name="card_text_padding">16dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_margin_half">4dp</dimen>
+    <dimen name="text_line_spacing">8dp</dimen>
+    <dimen name="cardview_elevation">2dp</dimen>
+    <dimen name="cardview_radius">2dp</dimen>
 </resources>

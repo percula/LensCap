@@ -5,8 +5,11 @@
     <color name="colorPrimaryLight">#FF8A65</color>
     <color name="colorAccent">#FF5722</color>
     <color name="colorSecondary">#FFC107</color>
-    <color name="textColorLight">#FFFFFF</color>
-    <color name="textColorDark">#000000</color>
+
     <color name="Grey_500">#9E9E9E</color>
     <color name="Deep_Orange_500">#FFCCBC</color>
+
+    <color name="button_inactive">#616161</color>
+    <color name="gray_background">#F5F5F5</color>
+
 </resources>

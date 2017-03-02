@@ -1,19 +1,13 @@
 package com.ownzordage.chrx.lenscap;
 
 import android.app.DialogFragment;
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ActivityNotFoundException;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentSender;
-import android.content.ServiceConnection;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.os.RemoteException;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -23,15 +17,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.vending.billing.IInAppBillingService;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.solovyev.android.checkout.ActivityCheckout;
+import org.solovyev.android.checkout.Billing;
+import org.solovyev.android.checkout.BillingRequests;
+import org.solovyev.android.checkout.Checkout;
+import org.solovyev.android.checkout.EmptyRequestListener;
+import org.solovyev.android.checkout.Inventory;
+import org.solovyev.android.checkout.ProductTypes;
+import org.solovyev.android.checkout.Purchase;
+import org.solovyev.android.checkout.Sku;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import static android.view.View.GONE;
 import static com.ownzordage.chrx.lenscap.LensCapActivator.disableDeviceAdmin;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,8 +39,12 @@ public class MainActivity extends AppCompatActivity {
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     Context mContext;
-    IInAppBillingService mService;
-    ArrayList<InAppPurchaseItem> inAppPurchaseItems = new ArrayList<>();
+//    IInAppBillingService mService;
+//    ArrayList<InAppPurchaseItem> inAppPurchaseItems = new ArrayList<>();
+
+    private ActivityCheckout mCheckout;
+    private Inventory mInventory;
+    private List<String> mSkus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,164 +92,137 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ServiceConnection mServiceConn = new ServiceConnection() {
-            @Override
-            public void onServiceDisconnected(ComponentName name) {
-                mService = null;
-            }
-
-            @Override
-            public void onServiceConnected(ComponentName name,
-                                           IBinder service) {
-                mService = IInAppBillingService.Stub.asInterface(service);
-
-                getInAppPurchases();
-            }
-        };
-
-        Intent serviceIntent =
-                new Intent("com.android.vending.billing.InAppBillingService.BIND");
-        serviceIntent.setPackage("com.android.vending");
-        bindService(serviceIntent, mServiceConn, Context.BIND_AUTO_CREATE);
-
-    }
-
-    private void getInAppPurchases() {
-        ArrayList<String> skuList = new ArrayList<String> ();
-        skuList.add("one");
-        skuList.add("two");
-        skuList.add("three");
-        skuList.add("four");
-        Bundle querySkus = new Bundle();
-        querySkus.putStringArrayList("ITEM_ID_LIST", skuList);
-
-        GetSKUsTask getSkusTask = new GetSKUsTask();
-        getSkusTask.execute(querySkus);
-    }
-
-
-    private class GetSKUsTask extends AsyncTask<Bundle, Void, ArrayList<InAppPurchaseItem>> {
-        protected ArrayList<InAppPurchaseItem> doInBackground(Bundle ... input) {
-            Bundle querySkus = input[0];
-            ArrayList<InAppPurchaseItem> inAppPurchaseItems = new ArrayList<>();
-
-            try {
-                Bundle skuDetails = mService.getSkuDetails(3, getPackageName(), "inapp", querySkus);
-                int response = skuDetails.getInt("RESPONSE_CODE");
-                if (response == 0) {
-                    ArrayList<String> responseList = skuDetails.getStringArrayList("DETAILS_LIST");
-
-                    if (responseList != null && responseList.size() > 0) {
-                        for (String thisResponse : responseList) {
-                            JSONObject object = new JSONObject(thisResponse);
-                            String sku = object.getString("productId");
-                            String price = object.getString("price");
-                            inAppPurchaseItems.add(new InAppPurchaseItem(sku, price));
-//                            Toast.makeText(mContext, sku + price, Toast.LENGTH_SHORT).show();
-                        }
-                    }
+        // Show Quick Settings promo card or hide it depending on version
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            findViewById(R.id.quick_settings_card).setVisibility(View.VISIBLE);
+            findViewById(R.id.quick_settings_show_me).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    watchYoutubeVideo("ZdsKdM-IMiQ");
                 }
-
-            } catch (RemoteException|JSONException e) {
-                Log.e(LOG_TAG, "Error getting skus", e);
-            }
-
-            return inAppPurchaseItems;
+            });
+        } else {
+            findViewById(R.id.quick_settings_card).setVisibility(View.GONE);
         }
 
-        protected void onPostExecute(ArrayList<InAppPurchaseItem> results) {
-            inAppPurchaseItems.clear();
-            inAppPurchaseItems.addAll(results);
-            updateButtonText();
+        final Billing billing = MyApplication.get(this).getBilling();
+        mCheckout = Checkout.forActivity(this, billing);
+        mCheckout.start();
+        mCheckout.createPurchaseFlow(new PurchaseListener());
+
+        mSkus = new ArrayList<>();
+        mSkus.add("one");
+        mSkus.add("two");
+        mSkus.add("three");
+        mSkus.add("four");
+
+        refreshInventory();
+    }
+
+
+    private class PurchaseListener extends EmptyRequestListener<Purchase> {
+        // your code here
+
+    }
+
+    private void refreshInventory() {
+        final Inventory.Request request = Inventory.Request.create();
+        request.loadAllPurchases();
+        request.loadSkus(ProductTypes.IN_APP, mSkus);
+        mCheckout.loadInventory(request, new InventoryCallback());
+    }
+
+    private class InventoryCallback implements Inventory.Callback {
+        @Override
+        public void onLoaded(@NonNull Inventory.Products products) {
+            updateIABViews(products);
         }
     }
 
-    public void updateButtonText() {
-        Button inAppPurchaseOne = (Button) findViewById(R.id.donate_one);
-        Button inAppPurchaseTwo = (Button) findViewById(R.id.donate_two);
-        Button inAppPurchaseThree = (Button) findViewById(R.id.donate_three);
-        Button inAppPurchaseFour = (Button) findViewById(R.id.donate_four);
-
-        if (inAppPurchaseItems.size() < 4) {
-            Toast.makeText(mContext, "In app purchases not loaded properly", Toast.LENGTH_SHORT).show();
-            return;
+    private void updateIABViews(Inventory.Products products) {
+        final Inventory.Product product = products.get(ProductTypes.IN_APP);
+        if (isSupporter(product)) {
+            findViewById(R.id.donate_container).setVisibility(GONE);
+            findViewById(R.id.donate_thank_you_container).setVisibility(View.VISIBLE);
+        } else {
+            updateIABButton(R.id.donate_one, product, mSkus.get(0));
+            updateIABButton(R.id.donate_two, product, mSkus.get(1));
+            updateIABButton(R.id.donate_three, product, mSkus.get(2));
+            updateIABButton(R.id.donate_four, product, mSkus.get(3));
         }
+    }
 
-        try {
-            inAppPurchaseOne.setText(findInAppPurchaseItem("one").getPrice());
-            inAppPurchaseTwo.setText(findInAppPurchaseItem("two").getPrice());
-            inAppPurchaseThree.setText(findInAppPurchaseItem("three").getPrice());
-            inAppPurchaseFour.setText(findInAppPurchaseItem("four").getPrice());
-        } catch (NullPointerException e) {
-            Log.e(LOG_TAG, "Couldn't assign prices", e);
+    private boolean isSupporter(Inventory.Product product) {
+        for (String sku : mSkus) {
+            if (product.isPurchased(sku)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    protected void onDestroy() {
+        mCheckout.stop();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        mCheckout.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void updateIABButton(int viewId, Inventory.Product product, String sku) {
+        Button IABButton = (Button) findViewById(viewId);
+        if (IABButton != null && product != null) {
+            Sku thisSku = product.getSku(sku);
+            if (thisSku != null) {
+                IABButton.setText(thisSku.price);
+            }
+            if (product.isPurchased(sku)) {
+                IABButton.setEnabled(false);
+            }
         }
     }
 
     public void inAppPurchaseClick(View view) {
         int id = view.getId();
-        if (inAppPurchaseItems.size() < 4) {
-            Toast.makeText(mContext, "In app purchases not loaded properly", Toast.LENGTH_SHORT).show();
-            return;
-        }
         switch(id) {
             case (R.id.donate_one):
-                buyInAppPurchase(findInAppPurchaseItem("one"));
+                mCheckout.whenReady(new Checkout.EmptyListener() {
+                    @Override
+                    public void onReady(BillingRequests requests) {
+                        requests.purchase(ProductTypes.IN_APP, mSkus.get(0), null, mCheckout.getPurchaseFlow());
+                    }
+                });
                 break;
             case (R.id.donate_two):
-                buyInAppPurchase(findInAppPurchaseItem("two"));
+                mCheckout.whenReady(new Checkout.EmptyListener() {
+                    @Override
+                    public void onReady(BillingRequests requests) {
+                        requests.purchase(ProductTypes.IN_APP, mSkus.get(1), null, mCheckout.getPurchaseFlow());
+                    }
+                });
                 break;
             case (R.id.donate_three):
-                buyInAppPurchase(findInAppPurchaseItem("three"));
+                mCheckout.whenReady(new Checkout.EmptyListener() {
+                    @Override
+                    public void onReady(BillingRequests requests) {
+                        requests.purchase(ProductTypes.IN_APP, mSkus.get(2), null, mCheckout.getPurchaseFlow());
+                    }
+                });
                 break;
             case (R.id.donate_four):
-                buyInAppPurchase(findInAppPurchaseItem("four"));
+                mCheckout.whenReady(new Checkout.EmptyListener() {
+                    @Override
+                    public void onReady(BillingRequests requests) {
+                        requests.purchase(ProductTypes.IN_APP, mSkus.get(3), null, mCheckout.getPurchaseFlow());
+                    }
+                });
                 break;
         }
     }
-
-    private InAppPurchaseItem findInAppPurchaseItem(String sku) {
-        for (int i = 0; i < inAppPurchaseItems.size(); i++) {
-            if (inAppPurchaseItems.get(i).getSku().equals(sku)) {
-                return inAppPurchaseItems.get(i);
-            }
-        }
-        return null;
-    }
-
-    private void buyInAppPurchase(InAppPurchaseItem inAppPurchaseItem) {
-        if (inAppPurchaseItem != null) {
-            try {
-                Bundle buyIntentBundle = mService.getBuyIntent(3, getPackageName(), inAppPurchaseItem.getSku(), "inapp", "");
-                if (buyIntentBundle.getInt("RESPONSE_CODE") == 0) {
-                    PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
-                    startIntentSenderForResult(pendingIntent.getIntentSender(), 1001, new Intent(),
-                            Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0));
-                }
-            } catch (RemoteException|IntentSender.SendIntentException e) {
-                Log.e(LOG_TAG, "Error completing in app purchase", e);
-            }
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1001) {
-            int responseCode = data.getIntExtra("RESPONSE_CODE", 0);
-            String purchaseData = data.getStringExtra("INAPP_PURCHASE_DATA");
-            String dataSignature = data.getStringExtra("INAPP_DATA_SIGNATURE");
-
-            if (resultCode == RESULT_OK) {
-                try {
-                    JSONObject jo = new JSONObject(purchaseData);
-                    String sku = jo.getString("productId");
-                }
-                catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
 
 
     @Override
@@ -321,8 +298,9 @@ public class MainActivity extends AppCompatActivity {
 
         switch (cameraStatus) {
             case CAMERA_DISABLED:
-                setAdminButton.setText(R.string.enable_device_admin_button_enabled);
-                setAdminButton.setEnabled(false);
+//                setAdminButton.setText(R.string.enable_device_admin_button_enabled);
+//                setAdminButton.setEnabled(false);
+                setAdminButton.setVisibility(GONE);
                 imageButton.setEnabled(true);
 
                 lensCapOffButton.setEnabled(true);
@@ -334,8 +312,9 @@ public class MainActivity extends AppCompatActivity {
                 imageButton.setImageResource(R.drawable.lenscap);
                 break;
             case CAMERA_ENABLED:
-                setAdminButton.setText(R.string.enable_device_admin_button_enabled);
-                setAdminButton.setEnabled(false);
+//                setAdminButton.setText(R.string.enable_device_admin_button_enabled);
+//                setAdminButton.setEnabled(false);
+                setAdminButton.setVisibility(GONE);
                 imageButton.setEnabled(true);
 
                 lensCapOnButton.setEnabled(true);
@@ -347,8 +326,9 @@ public class MainActivity extends AppCompatActivity {
                 imageButton.setImageResource(R.drawable.lens);
                 break;
             default:
-                setAdminButton.setText(R.string.enable_device_admin_button);
-                setAdminButton.setEnabled(true);
+                setAdminButton.setVisibility(View.VISIBLE);
+//                setAdminButton.setText(R.string.enable_device_admin_button);
+//                setAdminButton.setEnabled(true);
 
                 lensCapOnButton.setEnabled(false);
                 lensCapOffButton.setEnabled(false);
@@ -367,11 +347,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LensCapWidget.class);
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
         sendBroadcast(intent);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 
 }

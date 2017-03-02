@@ -24,6 +24,11 @@
         <item name="android:textColor">@color/button_color_selector</item>
     </style>
 
+    <style name="PrimaryFlatButton" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Borderless.Colored</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
     <!--<item name="colorControlHighlight">#FF5722</item>-->
     <!--<item name="android:textColor">#FF5722</item>-->
 

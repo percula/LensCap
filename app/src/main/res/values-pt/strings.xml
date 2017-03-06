@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Tampa da lente</string>
+	<string name="widgetpromo">Dica pro: Adicionar o widget da tampa da lente ao seu homescreen para rapidamente e facilmente controlar a tampa da lente</string>
+	<string name="enable_device_admin_button">Administrador de instalação do dispositivo</string>
+	<string name="enable_device_admin_button_enabled">Administrador de dispositivo habilitado</string>
+	<string name="error_no_device_admin">Não administrador do dispositivo, ative o em configurações</string>
+	<string name="disable_device_admin">Desabilitar o administrador do dispositivo</string>
+	<string name="disable_device_admin_help_1">Clique a tampa da lente</string>
+	<string name="disable_device_admin_help_2">Em seguida, clique "Deactivate administrator este dispositivo" na tela seguinte</string>
+	<string name="device_admin_already_disabled">Administrador do dispositivo já está desabilitado.</string>
+	<string name="uninstall">Desinstalar a tampa da lente</string>
+	<string name="lens_cap_status_off">Tampa lente</string>
+	<string name="lens_cap_status_off2">(Câmera ativada)</string>
+	<string name="lens_cap_status_on">Tampa da lente na</string>
+	<string name="lens_cap_status_on2">(Câmera desabilitado)</string>
+	<string name="lensCapOn">Coloque a tampa</string>
+	<string name="lensCapOff">Tira chapéu</string>
+	<string name="device_admin_dialog">Tampa da lente precisa de sua permissão para desativar a câmera.
+        
+ 
+ na tela seguinte, por favor, ative o administrador de dispositivo para a tampa da lente.</string>
+	<string name="OK">Continue</string>
+	<string name="cancel">Cancelar</string>
+	<string name="device_admin_description">Permitir que a tampa da lente desativar a câmera (s)</string>
+	<string name="admin_receiver_status_enabled">Lente tampa do dispositivo administrador ativado</string>
+	<string name="admin_receiver_status_disable_warning">Desactivar as permissões de administrador do lente Cap dispositivo?</string>
+	<string name="admin_receiver_status_disabled">Lente tampa do dispositivo administrador desativado</string>
+	<string name="appwidget_content_description">Tampa da lente Toggle on ou off</string>
+	<string name="qs_tile_title">Desativar a câmera</string>
+	<string name="qs_tile_enable">Ativar a câmera</string>
+	<string name="qs_tile_description">Descrição</string>
+	<string name="how_to_qs">Configurações rápidas telha ajuda</string>
+	<string name="quick_settings_text">Novo no Android 7 +: telha de configurações rápidas</string>
+	<string name="qs_show_me_how">Mostre-me como!</string>
+	<string name="donate">Como este app? Compre-me algum pi!</string>
+	<string name="donate_thank_you">Obrigado por me apoiar! Você é demais!</string>
+	<string name="thumbs_up">Polegares para cima!</string>
+
+</resources>

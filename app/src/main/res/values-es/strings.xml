@@ -1,0 +1,56 @@
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation" >
+
+    <!--General Strings-->
+    <string name="app_name">"Tapa Lente"</string>
+    <string name="widgetpromo">"Sugerencia: Añada el widget de Tapa Lente de la pantalla de inicio de forma rápida y fácil controlar tapa del objetivo"</string>
+
+    <!--Enable or Disable Device Admin Strings-->
+    <string name="enable_device_admin_button">"Instalación del administrador de dispositivos"</string>
+    <string name="enable_device_admin_button_enabled">"Dispositivo de administración habilitado"</string>
+    <string name="error_no_device_admin">"No Administrador de dispositivos, por favor active en ajustes"</string>
+    <string name="disable_device_admin">"Administrador de dispositivos desactivar"</string>
+    <string name="disable_device_admin_help_1">"Haga clic Tapa Lente"</string>
+    <string name="disable_device_admin_help_2">"A continuación, haga clic en \"Desactivar este administrador de dispositivos\" en la siguiente pantalla"</string>
+    <string name="device_admin_already_disabled">"Administrador de dispositivos ya está desactivado."</string>
+    <string name="uninstall">"Tapa Lente de desinstalación"</string>
+
+    <!--Put on or take off lens cap strings-->
+    <string name="lens_cap_status_off">"Tapa Lente apagado"</string>
+    <string name="lens_cap_status_off2">"(Cámara compatible)"</string>
+
+    <string name="lens_cap_status_on">"Tapa Lente en"</string>
+    <string name="lens_cap_status_on2">"(Cámara de movilidad reducida)"</string>
+
+    <string name="lensCapOn">"poner en la tapa"</string>
+    <string name="lensCapOff">"despegar la tapa"</string>
+
+    <!--Device administrator specific strings-->
+    <string name="device_admin_dialog">"Tapa Lente necesita su permiso para desactivar la cámara. \n \nEn la siguiente pantalla, por favor active el administrador del dispositivo de Tapa Lente."</string>
+    <string name="OK">"Continuar"</string>
+    <string name="cancel">"Cancelar "</string>
+
+    <string name="device_admin_description">"Permitir Tapa Lente para desactivar la cámara (s)"</string>
+    <string name="admin_receiver_status_enabled">"Tapa Lente de administración de dispositivos activado"</string>
+    <string name="admin_receiver_status_disable_warning">"Desactive permisos de administrador de dispositivos Tapa Lente?"</string>
+    <string name="admin_receiver_status_disabled">"Tapa Lente del dispositivo de administración desactivado"</string>
+
+    <!--Widget Strings-->
+    <string name="appwidget_content_description">"Tapa Lente Sí o No."</string>
+
+    <!--Quick Settings Tile Strings-->
+    <string name="qs_tile_title">"Desactivar cámara"</string>
+    <string name="qs_tile_enable">"Activar cámara"</string>
+    <string name="qs_tile_description">"Descripción"</string>
+    <string name="how_to_qs">"Ajustes rápidos ayuda del azulejo"</string>
+    <string name="quick_settings_text">"Nuevo en Android 7+: Teja configuración rápida"</string>
+    <string name="qs_show_me_how">"¡Muéstrame cómo!"</string>
+
+    <!--Donation Strings-->
+    <string name="donate">"Al igual que esta aplicación? me compre un cierto pi!"</string>
+    <string name="donate_thank_you">"¡Gracias por apoyarme!"</string>
+    <string name="thumbs_up">"Aceptado"</string>
+
+
+</resources>

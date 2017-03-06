@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Nắp ống kính</string>
+	<string name="widgetpromo">Pro Mẹo: Thêm widget nắp ống kính vào màn hình chính của bạn một cách nhanh chóng và dễ dàng kiểm soát nắp ống kính</string>
+	<string name="enable_device_admin_button">Người quản trị thiết lập thiết bị</string>
+	<string name="enable_device_admin_button_enabled">Người quản trị thiết bị được kích hoạt</string>
+	<string name="error_no_device_admin">Không người quản lý thiết bị, vui lòng kích hoạt trong cài đặt</string>
+	<string name="disable_device_admin">Vô hiệu hóa người quản trị thiết bị</string>
+	<string name="disable_device_admin_help_1">Click vào nắp ống kính</string>
+	<string name="disable_device_admin_help_2">Sau đó click vào "Deactivate này administrator thiết bị" trên màn hình kế tiếp</string>
+	<string name="device_admin_already_disabled">Người quản trị thiết bị đã bị vô hiệu hoá.</string>
+	<string name="uninstall">Gỡ bỏ cài đặt nắp ống kính</string>
+	<string name="lens_cap_status_off">Nắp ống kính ra</string>
+	<string name="lens_cap_status_off2">(Máy ảnh được kích hoạt)</string>
+	<string name="lens_cap_status_on">Nắp ống kính trên</string>
+	<string name="lens_cap_status_on2">(Máy ảnh Khuyết tật)</string>
+	<string name="lensCapOn">Đặt nắp</string>
+	<string name="lensCapOff">tháo nắp ra</string>
+	<string name="device_admin_dialog">Nắp ống kính cần quyền của bạn để vô hiệu hóa các máy ảnh.
+        N N trên màn hình tiếp theo, xin vui lòng kích hoạt thiết bị quản trị viên cho nắp ống kính.</string>
+	<string name="OK">Tiếp tục</string>
+	<string name="cancel">Hủy bỏ</string>
+	<string name="device_admin_description">Cho phép nắp ống kính để vô hiệu hoá các camera(s)</string>
+	<string name="admin_receiver_status_enabled">Nắp ống kính điện thoại quản trị viên kích hoạt</string>
+	<string name="admin_receiver_status_disable_warning">Tắt quyền truy cập quản trị thiết bị ống kính Cap?</string>
+	<string name="admin_receiver_status_disabled">Lens Cap quản trị thiết bị ngừng hoạt động</string>
+	<string name="appwidget_content_description">Nắp ống kính chuyển đổi hoặc tắt</string>
+	<string name="qs_tile_title">Vô hiệu hóa Camera</string>
+	<string name="qs_tile_enable">Sử Camera</string>
+	<string name="qs_tile_description">Mô tả</string>
+	<string name="how_to_qs">Nhanh chóng cài đặt gạch trợ giúp</string>
+	<string name="quick_settings_text">Mới trên Android 7 +: nhanh chóng cài đặt gạch</string>
+	<string name="qs_show_me_how">Chỉ cho tôi như thế nào!</string>
+	<string name="donate">Giống như ứng dụng này không? Mua cho tôi một số pi!</string>
+	<string name="donate_thank_you">Cảm ơn bạn đã hỗ trợ tôi! Bạn đá!</string>
+	<string name="thumbs_up">Ngón tay cái lên!</string>
+
+</resources>

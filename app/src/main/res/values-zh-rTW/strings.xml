@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">鏡頭蓋</string>
+	<string name="widgetpromo">Pro 提示︰ 將鏡頭蓋小部件添加到你的主畫面來快速、 輕鬆地控制鏡頭蓋</string>
+	<string name="enable_device_admin_button">安裝裝置管理員</string>
+	<string name="enable_device_admin_button_enabled">已啟用的裝置管理員</string>
+	<string name="error_no_device_admin">不裝置管理員，請在設置中啟用</string>
+	<string name="disable_device_admin">禁用裝置管理員</string>
+	<string name="disable_device_admin_help_1">按一下鏡頭蓋</string>
+	<string name="disable_device_admin_help_2">然後按一下 "Deactivate 這個設備 administrator"在下一個螢幕上</string>
+	<string name="device_admin_already_disabled">裝置管理員已被禁用。</string>
+	<string name="uninstall">卸載鏡頭蓋</string>
+	<string name="lens_cap_status_off">關閉鏡頭蓋</string>
+	<string name="lens_cap_status_off2">（相機啟用）</string>
+	<string name="lens_cap_status_on">關於鏡頭蓋</string>
+	<string name="lens_cap_status_on2">（相機已禁用）</string>
+	<string name="lensCapOn">把帽子放在</string>
+	<string name="lensCapOff">脫下帽</string>
+	<string name="device_admin_dialog">鏡頭蓋需要您的許可才能禁用觀景窗。
+        
+ 
+ 在下一螢幕上，請啟動鏡頭蓋的裝置管理員。</string>
+	<string name="OK">繼續</string>
+	<string name="cancel">取消</string>
+	<string name="device_admin_description">讓鏡頭蓋來禁用相機 （）</string>
+	<string name="admin_receiver_status_enabled">啟動的鏡頭蓋裝置管理員</string>
+	<string name="admin_receiver_status_disable_warning">停用鏡頭 Cap 裝置管理員許可權？</string>
+	<string name="admin_receiver_status_disabled">停用的鏡頭蓋裝置管理員</string>
+	<string name="appwidget_content_description">切換鏡頭蓋打開或關閉</string>
+	<string name="qs_tile_title">禁用觀景窗</string>
+	<string name="qs_tile_enable">使相機</string>
+	<string name="qs_tile_description">描述</string>
+	<string name="how_to_qs">快速設置平鋪的説明</string>
+	<string name="quick_settings_text">新的 Android 7 +: 快速設置平鋪</string>
+	<string name="qs_show_me_how">如何給我看看 ！</string>
+	<string name="donate">像這個應用程式嗎？給我買一些 pi ！</string>
+	<string name="donate_thank_you">謝謝你對我的支援 ！你搖滾 ！</string>
+	<string name="thumbs_up">豎起大拇指 ！</string>
+
+</resources>

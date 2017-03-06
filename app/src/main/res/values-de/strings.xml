@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Objektivdeckel</string>
+	<string name="widgetpromo">Profi-Tipp: Fügen Sie der Objektivdeckel Widget auf Ihrem Homescreen, schnell und einfach kontrollieren Objektivdeckel</string>
+	<string name="enable_device_admin_button">Geräteadministratoren Setup</string>
+	<string name="enable_device_admin_button_enabled">Geräteadministratoren aktiviert</string>
+	<string name="error_no_device_admin">Kein Geräteadministrator, bitte aktivieren Sie in den Einstellungen</string>
+	<string name="disable_device_admin">Geräteadministratoren deaktivieren</string>
+	<string name="disable_device_admin_help_1">Klicken Sie auf Objektivdeckel</string>
+	<string name="disable_device_admin_help_2">Klicken Sie "Deactivate dieses Gerät Administrators" auf dem nächsten Bildschirm</string>
+	<string name="device_admin_already_disabled">Geräteadministratoren ist bereits deaktiviert.</string>
+	<string name="uninstall">Deinstallieren Sie Objektivdeckel</string>
+	<string name="lens_cap_status_off">Objektivdeckel ab</string>
+	<string name="lens_cap_status_off2">(Kamera aktiviert)</string>
+	<string name="lens_cap_status_on">Objektivdeckel auf</string>
+	<string name="lens_cap_status_on2">(Kamera deaktiviert)</string>
+	<string name="lensCapOn">Kappe aufsetzen</string>
+	<string name="lensCapOff">Kappe abnehmen</string>
+	<string name="device_admin_dialog">Objektivdeckel braucht Ihre Erlaubnis, die Kamera zu deaktivieren.
+        
+ auf dem nächsten Bildschirm, aktivieren Sie bitte Geräteadministratoren für Objektivdeckel.</string>
+	<string name="OK">Weiter</string>
+	<string name="cancel">Abbrechen</string>
+	<string name="device_admin_description">Objektivdeckel, deaktivieren Sie die Kamera(s) zu ermöglichen</string>
+	<string name="admin_receiver_status_enabled">Lens Cap Geräteadministratoren aktiviert</string>
+	<string name="admin_receiver_status_disable_warning">Deaktivieren Lens Cap Gerät Administratorberechtigungen?</string>
+	<string name="admin_receiver_status_disabled">Lens Cap Geräteadministrator deaktiviert</string>
+	<string name="appwidget_content_description">Objektivdeckel zu wechseln, aktivieren oder deaktivieren</string>
+	<string name="qs_tile_title">Kamera zu deaktivieren</string>
+	<string name="qs_tile_enable">Aktivieren Sie Kamera</string>
+	<string name="qs_tile_description">Beschreibung</string>
+	<string name="how_to_qs">Schnelleinstellungen Fliesen-Hilfe</string>
+	<string name="quick_settings_text">Neu auf Android 7 +: Schnelleinstellungen Kachel</string>
+	<string name="qs_show_me_how">Zeig mir wie!</string>
+	<string name="donate">Wie diese app? Kaufen Sie mir einige Pi!</string>
+	<string name="donate_thank_you">Vielen Dank für Ihre Unterstützung! Sie rocken!</string>
+	<string name="thumbs_up">Daumen nach oben!</string>
+
+</resources>

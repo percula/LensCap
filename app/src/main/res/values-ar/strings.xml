@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">غطاء العدسة</string>
+	<string name="widgetpromo">تلميح برو: إضافة القطعة "غطاء العدسة" إلى الشاشة الرئيسية الخاصة بك بسرعة وسهولة التحكم "غطاء العدسة"</string>
+	<string name="enable_device_admin_button">إعداد الجهاز المسؤول</string>
+	<string name="enable_device_admin_button_enabled">مسؤول الجهاز تمكين</string>
+	<string name="error_no_device_admin">لا مسؤول الجهاز، الرجاء تمكين في إعدادات</string>
+	<string name="disable_device_admin">تعطيل الجهاز المسؤول</string>
+	<string name="disable_device_admin_help_1">انقر فوق غطاء العدسة</string>
+	<string name="disable_device_admin_help_2">ثم انقر فوق "Deactivate administrator هذا الجهاز" على الشاشة التالية</string>
+	<string name="device_admin_already_disabled">مسؤول الجهاز معطل بالفعل.</string>
+	<string name="uninstall">إلغاء تثبيت غطاء العدسة</string>
+	<string name="lens_cap_status_off">غطاء عدسة قبالة</string>
+	<string name="lens_cap_status_off2">(الكاميرا تمكين)</string>
+	<string name="lens_cap_status_on">غطاء العدسة على</string>
+	<string name="lens_cap_status_on2">(الكاميرا معطلة)</string>
+	<string name="lensCapOn">وضع غطاء على</string>
+	<string name="lensCapOff">خلع سقف</string>
+	<string name="device_admin_dialog">غطاء العدسة يحتاج الإذن الخاص بك لتعطيل الكاميرا.
+        
+ 
+ في الشاشة التالية، الرجاء تنشيط الجهاز المسؤول عن "غطاء العدسة".</string>
+	<string name="OK">مواصلة</string>
+	<string name="cancel">إلغاء الأمر</string>
+	<string name="device_admin_description">السماح "غطاء العدسة" لتعطيل في (ق)</string>
+	<string name="admin_receiver_status_enabled">غطاء عدسة الجهاز المسؤول المنشط</string>
+	<string name="admin_receiver_status_disable_warning">إلغاء تنشيط أذونات مسؤول الجهاز عدسة Cap؟</string>
+	<string name="admin_receiver_status_disabled">غطاء عدسة الجهاز المسؤول المعطلة</string>
+	<string name="appwidget_content_description">غطاء العدسة تبديل أو إيقاف تشغيله</string>
+	<string name="qs_tile_title">تعطيل الكاميرا</string>
+	<string name="qs_tile_enable">تمكين الكاميرا</string>
+	<string name="qs_tile_description">الوصف</string>
+	<string name="how_to_qs">إعدادات سريعة بلاط التعليمات</string>
+	<string name="quick_settings_text">الجديدة على الروبوت 7 +: بلاط إعدادات سريعة</string>
+	<string name="qs_show_me_how">وتبين لي كيف!</string>
+	<string name="donate">مثل هذا التطبيق؟ لي شراء بعض pi!</string>
+	<string name="donate_thank_you">شكرا لدعم لي! أنت الصخرة!</string>
+	<string name="thumbs_up">ممتاز!</string>
+
+</resources>

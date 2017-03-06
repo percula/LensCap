@@ -1,0 +1,53 @@
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
+
+    <!--General Strings-->
+    <string name="app_name">"렌즈 캡"</string>
+    <string name="widgetpromo">"프로 팁 : 렌즈 캡을 제어 쉽고 빠르게 홈 화면에 렌즈 캡 위젯을 추가하고"</string>
+
+    <!--Enable or Disable Device Admin Strings-->
+    <string name="enable_device_admin_button">"설치 장치 관리자"</string>
+    <string name="enable_device_admin_button_enabled">"장치 관리자는 사용"</string>
+    <string name="error_no_device_admin">"없음 장치 관리자, 설정에서 가능한지를 확인하시기 바랍니다"</string>
+    <string name="disable_device_admin">"안 장치 관리자"</string>
+    <string name="disable_device_admin_help_1">"렌즈 캡을 클릭"</string>
+    <string name="disable_device_admin_help_2">"그런 다음 클릭 다음 화면에서 \"이 장치 관리자를 비활성화\""</string>
+    <string name="device_admin_already_disabled">"장치 관리자는 이미 사용할 수 없습니다."</string>
+    <string name="uninstall">"제거 렌즈 캡"</string>
+
+    <!--Put on or take off lens cap strings-->
+    <string name="lens_cap_status_off">"렌즈 캡 해제"</string>
+    <string name="lens_cap_status_off2">"(카메라 사용)"</string>
+
+    <string name="lens_cap_status_on">"렌즈 캡에"</string>
+    <string name="lens_cap_status_on2">"(카메라 사용 안 함)"</string>
+
+    <string name="lensCapOn">"에 모자를 넣어"</string>
+    <string name="lensCapOff">"오프 모자 걸릴"</string>
+
+    <!--Device administrator specific strings-->
+    <string name="device_admin_dialog">"렌즈 캡 카메라를 사용하지 않도록 설정하려면 사용 권한이 필요합니다. \ 다음 화면에서 n 개의 \ n을, 렌즈 캡의 장치 관리자를 활성화 해주세요."</string>
+    <string name="OK">"이어하기 "</string>
+    <string name="cancel">"취소"</string>
+
+    <string name="device_admin_description">"(들) 렌즈 캡 카메라를 비활성화 할 수"</string>
+    <string name="admin_receiver_status_enabled">"렌즈 캡 장치 관리자가 활성화"</string>
+    <string name="admin_receiver_status_disable_warning">"렌즈 캡의 장치 관리자 권한을 비활성화?"</string>
+    <string name="admin_receiver_status_disabled">"렌즈 캡 장치 관리자 비활성화"</string>
+
+    <!--Widget Strings-->
+    <string name="appwidget_content_description">"또는 해제 전환 렌즈 캡"</string>
+
+    <!--Quick Settings Tile Strings-->
+    <string name="qs_tile_title">"안 카메라"</string>
+    <string name="qs_tile_enable">"카메라 사용"</string>
+    <string name="qs_tile_description">"설명 "</string>
+    <string name="how_to_qs">"빠른 설정 타일 도움"</string>
+    <string name="quick_settings_text">"빠른 설정 타일 : 7+ 안드로이드에 새로운"</string>
+    <string name="qs_show_me_how">"사용 방법 보기"</string>
+
+    <!--Donation Strings-->
+    <string name="donate">"이 응용 프로그램처럼? 나에게 약간의 파이를 구입하세요!"</string>
+    <string name="donate_thank_you">"저를지지 해 주셔서 감사합니다! 당신은 바위!"</string>
+    <string name="thumbs_up">"ㅊ"</string>
+
+</resources>

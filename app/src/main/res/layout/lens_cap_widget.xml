@@ -11,5 +11,5 @@
         android:scaleType="centerInside"
         android:src="@drawable/lenscap"
         android:background="@android:color/transparent"
-        android:contentDescription="@string/appwidget_text"/>
+        android:contentDescription="@string/appwidget_content_description"/>
 </LinearLayout>

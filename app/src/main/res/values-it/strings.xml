@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Copriobiettivo</string>
+	<string name="widgetpromo">Pro Suggerimento: Aggiungere il widget di copriobiettivo alla vostra homescreen per rapidamente e facilmente controllare copriobiettivo</string>
+	<string name="enable_device_admin_button">Amministratore del dispositivo di installazione</string>
+	<string name="enable_device_admin_button_enabled">Amministratore del dispositivo abilitato</string>
+	<string name="error_no_device_admin">Non amministratore del dispositivo, si prega di abilitare nelle impostazioni</string>
+	<string name="disable_device_admin">Disabilitare l\'amministratore del dispositivo</string>
+	<string name="disable_device_admin_help_1">Fare clic su copriobiettivo</string>
+	<string name="disable_device_admin_help_2">Quindi fare clic su "Deactivate questo administrator dispositivo" nella schermata successiva</string>
+	<string name="device_admin_already_disabled">Amministratore del dispositivo è già disabilitato.</string>
+	<string name="uninstall">Disinstallare il copriobiettivo</string>
+	<string name="lens_cap_status_off">Copriobiettivo off</string>
+	<string name="lens_cap_status_off2">(Fotocamera abilitata)</string>
+	<string name="lens_cap_status_on">Copriobiettivo su</string>
+	<string name="lens_cap_status_on2">(Fotocamera per disabili)</string>
+	<string name="lensCapOn">mettere il tappo sul</string>
+	<string name="lensCapOff">Togliere il tappo</string>
+	<string name="device_admin_dialog">Copriobiettivo richiede l\'autorizzazione per disattivare la fotocamera.
+        
+ nella schermata successiva, si prega di attivare amministratore del dispositivo per copriobiettivo.</string>
+	<string name="OK">Continuare</string>
+	<string name="cancel">Annulla</string>
+	<string name="device_admin_description">Consentire il copriobiettivo disattivare le telecamere</string>
+	<string name="admin_receiver_status_enabled">Amministratore di lente Cap dispositivo attivato</string>
+	<string name="admin_receiver_status_disable_warning">Disattivare le autorizzazioni di amministratore del dispositivo di Lens Cap?</string>
+	<string name="admin_receiver_status_disabled">Amministratore di lente Cap dispositivo disattivato</string>
+	<string name="appwidget_content_description">Attivare o disattivare il copriobiettivo</string>
+	<string name="qs_tile_title">Disattivare la fotocamera</string>
+	<string name="qs_tile_enable">Attivare la fotocamera</string>
+	<string name="qs_tile_description">Descrizione</string>
+	<string name="how_to_qs">Impostazioni rapide piastrelle aiuto</string>
+	<string name="quick_settings_text">Nuovo su Android 7 +: mattonelle di impostazioni rapide</string>
+	<string name="qs_show_me_how">Fammi vedere come!</string>
+	<string name="donate">Come questa app? Mi comprare alcuni pi!</string>
+	<string name="donate_thank_you">Grazie per avermi supportato! È rock!</string>
+	<string name="thumbs_up">Evviva!</string>
+
+</resources>

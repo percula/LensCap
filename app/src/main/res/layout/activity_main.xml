@@ -30,6 +30,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="8dp"
                     android:padding="16dp"
+                    android:textAllCaps="true"
                     android:text="@string/enable_device_admin_button"
                     android:textAppearance="?android:textAppearanceMedium"
                     android:theme="@style/AdminButton" />
@@ -47,7 +48,10 @@
                         android:layout_marginLeft="@dimen/button_margin"
                         android:layout_marginStart="@dimen/button_margin"
                         android:layout_weight="2"
+                        android:maxLines="4"
+                        android:textAlignment="center"
                         android:clickable="false"
+                        android:textAllCaps="true"
                         android:text="@string/lensCapOn"
                         android:textAppearance="?android:textAppearanceLarge"
                         android:theme="@style/FlatButton" />
@@ -73,6 +77,9 @@
                         android:layout_marginRight="@dimen/button_margin"
                         android:layout_marginEnd="@dimen/button_margin"
                         android:layout_weight="2"
+                        android:maxLines="4"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
                         android:clickable="false"
                         android:text="@string/lensCapOff"
                         android:textAppearance="?android:textAppearanceLarge"
@@ -245,7 +252,6 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="inAppPurchaseClick"
-                            android:text="@string/donate_one"
                             android:theme="@style/PrimaryFlatButton" />
 
                         <Button
@@ -254,7 +260,6 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="inAppPurchaseClick"
-                            android:text="@string/donate_two"
                             android:theme="@style/PrimaryFlatButton" />
 
                         <Button
@@ -263,7 +268,6 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="inAppPurchaseClick"
-                            android:text="@string/donate_three"
                             android:textAllCaps="false"
                             android:theme="@style/PrimaryFlatButton" />
 
@@ -273,7 +277,6 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="inAppPurchaseClick"
-                            android:text="@string/donate_four"
                             android:theme="@style/PrimaryFlatButton" />
 
                     </LinearLayout>

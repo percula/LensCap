@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">镜头盖</string>
+	<string name="widgetpromo">Pro 提示︰ 将镜头盖小部件添加到你的主屏幕来快速、 轻松地控制镜头盖</string>
+	<string name="enable_device_admin_button">安装设备管理员</string>
+	<string name="enable_device_admin_button_enabled">已启用的设备管理员</string>
+	<string name="error_no_device_admin">不设备管理员，请在设置中启用</string>
+	<string name="disable_device_admin">禁用设备管理员</string>
+	<string name="disable_device_admin_help_1">单击镜头盖</string>
+	<string name="disable_device_admin_help_2">然后单击 "Deactivate 这个设备 administrator"在下一个屏幕上</string>
+	<string name="device_admin_already_disabled">设备管理员已被禁用。</string>
+	<string name="uninstall">卸载镜头盖</string>
+	<string name="lens_cap_status_off">关闭镜头盖</string>
+	<string name="lens_cap_status_off2">（相机启用）</string>
+	<string name="lens_cap_status_on">关于镜头盖</string>
+	<string name="lens_cap_status_on2">（相机已禁用）</string>
+	<string name="lensCapOn">把帽子放在</string>
+	<string name="lensCapOff">脱下帽</string>
+	<string name="device_admin_dialog">镜头盖需要您的许可才能禁用照相机。
+        
+ 
+ 在下一屏幕上，请激活镜头盖的设备管理员。</string>
+	<string name="OK">继续</string>
+	<string name="cancel">取消</string>
+	<string name="device_admin_description">让镜头盖来禁用相机 （）</string>
+	<string name="admin_receiver_status_enabled">激活的镜头盖设备管理员</string>
+	<string name="admin_receiver_status_disable_warning">停用镜头 Cap 设备管理员权限？</string>
+	<string name="admin_receiver_status_disabled">停用的镜头盖设备管理员</string>
+	<string name="appwidget_content_description">切换镜头盖打开或关闭</string>
+	<string name="qs_tile_title">禁用照相机</string>
+	<string name="qs_tile_enable">使相机</string>
+	<string name="qs_tile_description">描述</string>
+	<string name="how_to_qs">快速设置平铺的帮助</string>
+	<string name="quick_settings_text">新的 Android 7 +: 快速设置平铺</string>
+	<string name="qs_show_me_how">如何给我看看 ！</string>
+	<string name="donate">像这个应用程序吗？给我买一些 pi ！</string>
+	<string name="donate_thank_you">谢谢你对我的支持 ！你摇滚 ！</string>
+	<string name="thumbs_up">竖起大拇指 ！</string>
+
+</resources>

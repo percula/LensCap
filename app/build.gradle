@@ -12,19 +12,21 @@ android {
         versionName "1.71"
         vectorDrawables.useSupportLibrary = true
     }
+
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    // Retrieve In-App-Billing key
     buildTypes.each {
         it.buildConfigField 'String', 'PUBLIC_IAB_KEY_1', public_IAB_key_1
         it.buildConfigField 'String', 'PUBLIC_IAB_KEY_2', public_IAB_key_2
         it.buildConfigField 'String', 'PUBLIC_IAB_KEY_3', public_IAB_key_3
         it.buildConfigField 'String', 'PUBLIC_IAB_KEY_4', public_IAB_key_4
         it.buildConfigField 'String', 'PUBLIC_IAB_KEY_5', public_IAB_key_5
-
     }
 }
 
@@ -34,7 +36,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.0.0-beta2'
     compile 'com.android.support:support-v4:26.0.0-beta2'
     compile 'com.android.support:cardview-v7:26.0.0-beta2'
-    compile 'org.solovyev.android:checkout:1.0.0'
+    compile 'org.solovyev.android:checkout:1.0.0' // This open-source library provides In-App-Billing
 }
 
 repositories {

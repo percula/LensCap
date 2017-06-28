@@ -13,8 +13,6 @@ import javax.annotation.Nonnull;
 
 public class MyApplication extends Application {
 
-    private static MyApplication sInstance;
-
     private final Billing mBilling = new Billing(this, new Billing.DefaultConfiguration() {
         @Override
         public String getPublicKey() {

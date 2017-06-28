@@ -34,16 +34,17 @@ import java.util.List;
 import static android.view.View.GONE;
 import static com.ownzordage.chrx.lenscap.LensCapActivator.disableDeviceAdmin;
 
+
+/**
+ * The primary Activity
+ */
 public class MainActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     Context mContext;
-//    IInAppBillingService mService;
-//    ArrayList<InAppPurchaseItem> inAppPurchaseItems = new ArrayList<>();
 
     private ActivityCheckout mCheckout;
-    private Inventory mInventory;
     private List<String> mSkus;
 
     @Override
@@ -298,8 +299,6 @@ public class MainActivity extends AppCompatActivity {
 
         switch (cameraStatus) {
             case CAMERA_DISABLED:
-//                setAdminButton.setText(R.string.enable_device_admin_button_enabled);
-//                setAdminButton.setEnabled(false);
                 setAdminButton.setVisibility(GONE);
                 imageButton.setEnabled(true);
 
@@ -312,8 +311,6 @@ public class MainActivity extends AppCompatActivity {
                 imageButton.setImageResource(R.drawable.lenscap);
                 break;
             case CAMERA_ENABLED:
-//                setAdminButton.setText(R.string.enable_device_admin_button_enabled);
-//                setAdminButton.setEnabled(false);
                 setAdminButton.setVisibility(GONE);
                 imageButton.setEnabled(true);
 
@@ -327,8 +324,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 setAdminButton.setVisibility(View.VISIBLE);
-//                setAdminButton.setText(R.string.enable_device_admin_button);
-//                setAdminButton.setEnabled(true);
 
                 lensCapOnButton.setEnabled(false);
                 lensCapOffButton.setEnabled(false);

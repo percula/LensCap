@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 
 /**
- * Created by chrx on 4/2/16.
+ * The dialog to enable DeviceAdmin
  */
 public class DeviceAdminDialog extends DialogFragment {
     @Override

@@ -1,7 +1,7 @@
 package com.ownzordage.chrx.lenscap;
 
 /**
- * CRepresents an InAppPurchaseItem
+ * Represents an InAppPurchaseItem
  */
 
 public class InAppPurchaseItem {

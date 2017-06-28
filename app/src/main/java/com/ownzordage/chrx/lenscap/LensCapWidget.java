@@ -17,7 +17,7 @@ import android.util.Log;
 import android.widget.RemoteViews;
 
 /**
- * Implementation of App Widget functionality.
+ * Creates a simple toggle widget
  */
 public class LensCapWidget extends AppWidgetProvider {
     public static String ACTION_WIDGET_TOGGLE = "com.ownzordage.chrx.lenscap.TOGGLE";
@@ -62,6 +62,7 @@ public class LensCapWidget extends AppWidgetProvider {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             remoteViews.setImageViewResource(id, drawableId);
         } else {
+            //noinspection RestrictedApi
             Drawable d = AppCompatDrawableManager.get().getDrawable(context, drawableId);
             Bitmap b = Bitmap.createBitmap(d.getIntrinsicWidth(),
                     d.getIntrinsicHeight(),

@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.widget.Toast;
 
 /**
- * Created by peter on 11/12/16.
+ * Helper class to activate and deactivate Lens Cap
  */
 
 public class LensCapActivator {

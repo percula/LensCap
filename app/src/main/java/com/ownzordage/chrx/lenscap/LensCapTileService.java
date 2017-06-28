@@ -10,6 +10,9 @@ import android.os.Build;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
+/**
+ * Quick Settings tile service for Android 7.0+
+ */
 
 @TargetApi(Build.VERSION_CODES.N)
 public class LensCapTileService extends TileService {

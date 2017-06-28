@@ -3,12 +3,10 @@
 
     <item
         android:id="@+id/action_disable_device_admin"
-        android:title="@string/disable_device_admin"
-        android:icon="@drawable/ic_remove_circle_outline_black_24dp"/>
+        android:title="@string/disable_device_admin"/>
     <item
         android:id="@+id/action_uninstall"
-        android:title="@string/uninstall"
-        android:icon="@drawable/ic_remove_circle_outline_black_24dp" />
+        android:title="@string/uninstall" />
     <item
         android:id="@+id/action_qs_youtube"
         android:title="@string/how_to_qs"

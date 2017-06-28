@@ -6,6 +6,13 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.IdRes;
+import android.support.v7.widget.AppCompatDrawableManager;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -26,13 +33,13 @@ public class LensCapWidget extends AppWidgetProvider {
             // Add the data to the RemoteViews
             switch (cameraStatus) {
                 case CAMERA_DISABLED:
-                    views.setImageViewResource(R.id.widget_image,R.drawable.lenscap);
+                    setImage(context, R.drawable.lenscap, views, R.id.widget_image);
                     break;
                 case CAMERA_ENABLED:
-                    views.setImageViewResource(R.id.widget_image,R.drawable.lens);
+                    setImage(context, R.drawable.lens, views, R.id.widget_image);
                     break;
                 default:
-                    views.setImageViewResource(R.id.widget_image,R.drawable.lens);
+                    setImage(context, R.drawable.lens, views, R.id.widget_image);
                     break;
             }
 
@@ -48,6 +55,21 @@ public class LensCapWidget extends AppWidgetProvider {
 
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
+        }
+    }
+
+    private void setImage(Context context, @DrawableRes int drawableId, RemoteViews remoteViews, @IdRes int id) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            remoteViews.setImageViewResource(id, drawableId);
+        } else {
+            Drawable d = AppCompatDrawableManager.get().getDrawable(context, drawableId);
+            Bitmap b = Bitmap.createBitmap(d.getIntrinsicWidth(),
+                    d.getIntrinsicHeight(),
+                    Bitmap.Config.ARGB_8888);
+            Canvas c = new Canvas(b);
+            d.setBounds(0, 0, c.getWidth(), c.getHeight());
+            d.draw(c);
+            remoteViews.setImageViewBitmap(id, b);
         }
     }
 

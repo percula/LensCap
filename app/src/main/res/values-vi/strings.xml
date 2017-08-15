@@ -35,5 +35,6 @@
 	<string name="donate">Giống như ứng dụng này không? Mua cho tôi một số pi!</string>
 	<string name="donate_thank_you">Cảm ơn bạn đã hỗ trợ tôi! Bạn đá!</string>
 	<string name="thumbs_up">Ngón tay cái lên!</string>
+    <string name="info">Thông tin</string>
 
 </resources>

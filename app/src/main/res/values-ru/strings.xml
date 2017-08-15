@@ -49,5 +49,6 @@
     <string name="donate">"Как это приложение? Купите мне пи!"</string>
     <string name="donate_thank_you">"Спасибо за поддержку меня! Ты жжешь!"</string>
     <string name="thumbs_up">"Большой палец вверх!"</string>
+    <string name="info">Информация</string>
 
 </resources>

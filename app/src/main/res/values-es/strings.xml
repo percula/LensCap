@@ -51,6 +51,7 @@
     <string name="donate">"Al igual que esta aplicación? me compre un cierto pi!"</string>
     <string name="donate_thank_you">"¡Gracias por apoyarme!"</string>
     <string name="thumbs_up">"Aceptado"</string>
+    <string name="info">Info</string>
 
 
 </resources>

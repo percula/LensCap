@@ -27,13 +27,11 @@
     <string name="lensCapOff">take cap off</string>
 
     <!--Device administrator specific strings-->
-    <string name="device_admin_dialog">Lens Cap needs your permission to disable the camera.
-        \n
-        \n On the next screen, please activate device administrator for Lens Cap.</string>
+    <string name="device_admin_dialog">This app uses the Device Administrator Disable Camera permission. It needs this permission to disable the camera. On the next screen, please activate Device Administrator for Lens Cap.</string>
     <string name="OK">Continue</string>
     <string name="cancel">Cancel</string>
 
-    <string name="device_admin_description">Allow Lens Cap to disable the camera(s)</string>
+    <string name="device_admin_description">Used to disable the camera(s) (and nothing else)</string>
     <string name="admin_receiver_status_enabled">Lens Cap device administrator activated</string>
     <string name="admin_receiver_status_disable_warning">Deactivate Lens Cap\'s device administrator permissions?</string>
     <string name="admin_receiver_status_disabled">Lens Cap device administrator deactivated</string>
@@ -53,5 +51,6 @@
     <string name="donate">Like this app? Buy me some pi!</string>
     <string name="donate_thank_you">Thanks for supporting me! You rock!</string>
     <string name="thumbs_up">Thumbs up!</string>
+    <string name="info">Info</string>
 
 </resources>

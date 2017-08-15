@@ -37,5 +37,6 @@
 	<string name="donate">مثل هذا التطبيق؟ لي شراء بعض pi!</string>
 	<string name="donate_thank_you">شكرا لدعم لي! أنت الصخرة!</string>
 	<string name="thumbs_up">ممتاز!</string>
+    <string name="info">معلومات</string>
 
 </resources>

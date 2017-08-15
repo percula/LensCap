@@ -37,5 +37,6 @@
 	<string name="donate">像这个应用程序吗？给我买一些 pi ！</string>
 	<string name="donate_thank_you">谢谢你对我的支持 ！你摇滚 ！</string>
 	<string name="thumbs_up">竖起大拇指 ！</string>
+    <string name="info">信息</string>
 
 </resources>

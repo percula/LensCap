@@ -37,5 +37,6 @@
 	<string name="donate">Comme ce soft ? M’acheter quelques pi !</string>
 	<string name="donate_thank_you">Merci de me soutenir ! Rock You !</string>
 	<string name="thumbs_up">Thumbs up !</string>
+    <string name="info">Info</string>
 
 </resources>

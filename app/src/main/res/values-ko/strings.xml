@@ -49,5 +49,6 @@
     <string name="donate">"이 응용 프로그램처럼? 나에게 약간의 파이를 구입하세요!"</string>
     <string name="donate_thank_you">"저를지지 해 주셔서 감사합니다! 당신은 바위!"</string>
     <string name="thumbs_up">"ㅊ"</string>
+    <string name="info">정보</string>
 
 </resources>

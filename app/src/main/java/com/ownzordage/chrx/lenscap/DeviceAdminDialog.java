@@ -5,6 +5,7 @@ import android.app.DialogFragment;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 
@@ -29,7 +30,16 @@ public class DeviceAdminDialog extends DialogFragment {
                     public void onClick(DialogInterface dialog, int id) {
                         // User cancelled the dialog
                     }
-                });
+                }).setNeutralButton(R.string.info, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Uri website = Uri.parse("https://developer.android.com/guide/topics/admin/device-admin.html");
+                Intent intent = new Intent(Intent.ACTION_VIEW, website);
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
         // Create the AlertDialog object and return it
         return builder.create();
     }

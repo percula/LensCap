@@ -37,5 +37,6 @@
 	<string name="donate">このアプリのような?私にいくつかの pi を購入する!</string>
 	<string name="donate_thank_you">私を支えてくれてありがとう!あなたは揺れ動きます!</string>
 	<string name="thumbs_up">親指!</string>
+    <string name="info">情報</string>
 
 </resources>

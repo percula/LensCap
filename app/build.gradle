@@ -8,8 +8,8 @@ android {
         applicationId "com.ownzordage.chrx.lenscap"
         minSdkVersion 14
         targetSdkVersion 26
-        versionCode 11
-        versionName "1.71"
+        versionCode 12
+        versionName "1.72"
         vectorDrawables.useSupportLibrary = true
     }
 

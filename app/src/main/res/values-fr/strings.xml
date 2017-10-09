@@ -2,41 +2,41 @@
 <resources>
 
 	<string name="app_name">Bouchon d’objectif</string>
-	<string name="widgetpromo">Conseil du Pro : Ajouter le widget de bouchon d’objectif pour votre homescreen bouchon d’objectif de contrôler rapidement et facilement</string>
-	<string name="enable_device_admin_button">Administrateur de dispositif d’installation</string>
-	<string name="enable_device_admin_button_enabled">Administrateur de périphérique activée</string>
-	<string name="error_no_device_admin">Pas administrateur du dispositif, s’il vous plaît activer dans les paramètres</string>
-	<string name="disable_device_admin">Désactiver l’administrateur de l’appareil</string>
-	<string name="disable_device_admin_help_1">Cliquez sur le bouchon d’objectif</string>
-	<string name="disable_device_admin_help_2">Puis cliquez sur "Deactivate cette administrator de périphérique » dans l’écran suivant</string>
-	<string name="device_admin_already_disabled">Administrateur de l’appareil est déjà désactivé.</string>
-	<string name="uninstall">Désinstaller le capuchon d’objectif</string>
-	<string name="lens_cap_status_off">Capuchon de lentille</string>
-	<string name="lens_cap_status_off2">(Caméra activée)</string>
-	<string name="lens_cap_status_on">Bouchon d’objectif sur</string>
-	<string name="lens_cap_status_on2">(Caméra désactivée)</string>
-	<string name="lensCapOn">mettre le cap</string>
-	<string name="lensCapOff">enlever le capuchon</string>
-	<string name="device_admin_dialog">Bouchon d’objectif a besoin de votre autorisation pour désactiver la caméra.
-        
- 
- sur l’écran suivant, s’il vous plaît activer administrateur de dispositif pour bouchon d’objectif.</string>
+	<string name="widgetpromo">Conseil de Pro : Ajouter le widget du Bouchon d’objectif à votre page d’accueil</string>
+	<string name="enable_device_admin_button">Administration du dispositif d’installation</string>
+	<string name="enable_device_admin_button_enabled">Administration de l’appareil activée</string>
+	<string name="error_no_device_admin">Administration de l’appareil désactivée, veuillez l’activer dans les paramètres</string>
+	<string name="disable_device_admin">Désactiver l’administration de l’appareil</string>
+	<string name="disable_device_admin_help_1">Cliquez sur Bouchon d’objectif</string>
+	<string name="disable_device_admin_help_2">Puis cliquez sur "Désactivez l’administration de l’appareil » dans l’écran suivant</string>
+	<string name="device_admin_already_disabled">L’administration de l’appareil est déjà désactivée.</string>
+	<string name="uninstall">Désinstaller le Bouchon d’objectif</string>
+	<string name="lens_cap_status_off">Bouchon d’objectif enlevé</string>
+	<string name="lens_cap_status_off2">(Appareil activé)</string>
+	<string name="lens_cap_status_on">Objectif couvert</string>
+	<string name="lens_cap_status_on2">(Appareil désactivé)</string>
+	<string name="lensCapOn">Mettre le bouchon</string>
+	<string name="lensCapOff">Enlever le bouchon</string>
+	<string name="device_admin_dialog">Le Bouchon d’objectif a besoin de votre autorisation pour désactiver l’appareil.
+
+
+ sur l’écran suivant, veuillez activer l’administration de l’appareil pour le Bouchon d’objectif.</string>
 	<string name="OK">Continuer</string>
 	<string name="cancel">Annuler</string>
-	<string name="device_admin_description">Laisser le bouchon d’objectif désactiver la caméra (s)</string>
-	<string name="admin_receiver_status_enabled">Administrateur de dispositif Cap lentille activé</string>
-	<string name="admin_receiver_status_disable_warning">Désactiver les autorisations d’administrateur de lentille Cap dispositif ?</string>
-	<string name="admin_receiver_status_disabled">Administrateur de dispositif Cap lentille désactivé</string>
+	<string name="device_admin_description">Laisser le Bouchon d’objectif désactiver la caméra (s)</string>
+	<string name="admin_receiver_status_enabled">Administration du Bouchon d’objectif activée</string>
+	<string name="admin_receiver_status_disable_warning">Désactiver les autorisations d’administration à Bouchon d’objectif ?</string>
+	<string name="admin_receiver_status_disabled">Administration du Bouchon d’Objectif désactivée</string>
 	<string name="appwidget_content_description">Bouchon d’objectif activer/désactiver ou désactiver</string>
-	<string name="qs_tile_title">Désactiver la caméra</string>
-	<string name="qs_tile_enable">Activez l’appareil photo</string>
+	<string name="qs_tile_title">Désactiver l’appareil</string>
+	<string name="qs_tile_enable">Activer l’appareil</string>
 	<string name="qs_tile_description">Description</string>
-	<string name="how_to_qs">Réglages rapides tile aide</string>
-	<string name="quick_settings_text">Nouveau sur Android 7 + : tuile de réglages rapides</string>
-	<string name="qs_show_me_how">Montrez-moi comment !</string>
-	<string name="donate">Comme ce soft ? M’acheter quelques pi !</string>
-	<string name="donate_thank_you">Merci de me soutenir ! Rock You !</string>
-	<string name="thumbs_up">Thumbs up !</string>
-    <string name="info">Info</string>
+	<string name="how_to_qs">Réglages rapides icônes d’aide</string>
+	<string name="quick_settings_text">Nouveau sur Android 7 + : icône de réglage rapide</string>
+	<string name="qs_show_me_how">Montrez-moi !</string>
+	<string name="donate">Comme cette application ? M’acheter quelques pi !</string>
+	<string name="donate_thank_you">Merci de me soutenir ! </string>
+	<string name="thumbs_up">Thumbs up !</string>
+	<string name="info">Info</string>
 
 </resources>

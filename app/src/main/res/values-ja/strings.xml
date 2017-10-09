@@ -2,21 +2,21 @@
 <resources>
 
 	<string name="app_name">レンズ キャップ</string>
-	<string name="widgetpromo">Pro ヒント: レンズ キャップ ウィジェットを迅速かつ容易にレンズ キャップを制御するあなたのホーム画面に追加します。</string>
+	<string name="widgetpromo">ヒント：ホーム画面にレンズキャップ ウィジェットを追加すれば、レンズキャップの着脱が簡単になります。</string>
 	<string name="enable_device_admin_button">セットアップ デバイス管理者</string>
 	<string name="enable_device_admin_button_enabled">デバイス管理者を有効に</string>
 	<string name="error_no_device_admin">デバイス管理者ではなく、設定で有効にしてください</string>
-	<string name="disable_device_admin">デバイス管理者を無効にします。</string>
+	<string name="disable_device_admin">端末管理者を無効にする</string>
 	<string name="disable_device_admin_help_1">レンズ キャップをクリックします。</string>
 	<string name="disable_device_admin_help_2">このデバイスの administrator "Deactivate をクリックして"次の画面で</string>
 	<string name="device_admin_already_disabled">デバイス管理者は既に無効です。</string>
-	<string name="uninstall">レンズ キャップをアンインストールします。</string>
-	<string name="lens_cap_status_off">レンズ キャップ</string>
-	<string name="lens_cap_status_off2">(カメラが有効になっている)</string>
-	<string name="lens_cap_status_on">上にレンズ キャップ</string>
+	<string name="uninstall"> このアプリをアンインストールする</string>
+	<string name="lens_cap_status_off">レンズキャップ OFF</string>
+	<string name="lens_cap_status_off2">(カメラ有効)</string>
+	<string name="lens_cap_status_on">レンズキャップ ON</string>
 	<string name="lens_cap_status_on2">(カメラ無効)</string>
-	<string name="lensCapOn">上キャップを置く</string>
-	<string name="lensCapOff">キャップを脱いでください。</string>
+	<string name="lensCapOn">キャップする</string>
+	<string name="lensCapOff">キャップをハズす</string>
 	<string name="device_admin_dialog">レンズ キャップには、カメラを無効にするあなたの許可が必要です。
         次の画面では、
  
@@ -34,7 +34,7 @@
 	<string name="how_to_qs">[クイック設定] タイル ヘルプ</string>
 	<string name="quick_settings_text">7 Android + で新しい: [クイック設定] タイル</string>
 	<string name="qs_show_me_how">方法を教えて!</string>
-	<string name="donate">このアプリのような?私にいくつかの pi を購入する!</string>
+	<string name="donate">気に入っていただけましたか？ ぜひ寄付のご協力をお願いします。</string>
 	<string name="donate_thank_you">私を支えてくれてありがとう!あなたは揺れ動きます!</string>
 	<string name="thumbs_up">親指!</string>
     <string name="info">情報</string>

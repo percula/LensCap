@@ -4,10 +4,13 @@ import android.app.DialogFragment;
 import android.appwidget.AppWidgetManager;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -118,6 +121,19 @@ public class MainActivity extends AppCompatActivity {
         mSkus.add("four");
 
         refreshInventory();
+
+        if (Build.VERSION.SDK_INT >= 30) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Unfortunately Lens Cap is incompatible with Android 11 and will no longer function properly.")
+                    .setTitle(R.string.uninstall)
+                    .setPositiveButton(R.string.uninstall, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            uninstall();
+                        }
+                    })
+                    .create().show();
+        }
     }
 
 
@@ -248,19 +264,23 @@ public class MainActivity extends AppCompatActivity {
                 disableDeviceAdmin(mContext);
                 return true;
             case R.id.action_uninstall:
-                if (LensCapActivator.getStatus(mContext) != LensCapActivator.Status.DEVICE_ADMIN_DISABLED) {
-                    disableDeviceAdmin(mContext);
-                } else {
-                    Uri packageUri = Uri.parse("package:com.ownzordage.chrx.lenscap");
-                    Intent uninstallIntent =
-                            new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri);
-                    startActivity(uninstallIntent);
-                }
+                uninstall();
                 return true;
             case R.id.action_qs_youtube:
                 watchYoutubeVideo("ZdsKdM-IMiQ");
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void uninstall() {
+        if (LensCapActivator.getStatus(mContext) != LensCapActivator.Status.DEVICE_ADMIN_DISABLED) {
+            disableDeviceAdmin(mContext);
+        } else {
+            Uri packageUri = Uri.parse("package:com.ownzordage.chrx.lenscap");
+            Intent uninstallIntent =
+                    new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri);
+            startActivity(uninstallIntent);
         }
     }
 

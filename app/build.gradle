@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "com.ownzordage.chrx.lenscap"
         minSdkVersion 14
-        maxSdkVersion 28
+        maxSdkVersion 29
         targetSdkVersion 28
-        versionCode 15
-        versionName "1.75"
+        versionCode 18
+        versionName "1.78"
         vectorDrawables.useSupportLibrary = true
     }
 

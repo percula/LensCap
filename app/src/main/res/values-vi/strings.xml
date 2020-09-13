@@ -36,5 +36,8 @@
 	<string name="donate_thank_you">Cảm ơn bạn đã hỗ trợ tôi! Bạn đá!</string>
 	<string name="thumbs_up">Ngón tay cái lên!</string>
     <string name="info">Thông tin</string>
+    <string name="warning_android_11">Rất tiếc, Lens Cap không tương thích với Android 11 và sẽ không còn hoạt động bình thường.</string>
+	<string name="warning_android_10">Lens Cap không tương thích với Android 11 (bạn hiện đang sử dụng Android 10). Đảm bảo rằng bạn đã bật lại máy ảnh hoặc gỡ cài đặt Lens Cap trước khi cập nhật lên Android 11. Nếu bạn không làm như vậy, máy ảnh có thể vẫn bị vô hiệu hóa mà không có cách nào để bật lại.</string>
+	<string name="warning_android_10_title">Cảnh báo về bản cập nhật Android 11 sắp tới</string>
 
 </resources>

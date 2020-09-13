@@ -52,6 +52,9 @@
     <string name="donate_thank_you">"¡Gracias por apoyarme!"</string>
     <string name="thumbs_up">"Aceptado"</string>
     <string name="info">Info</string>
+    <string name="warning_android_11">Desafortunadamente, Lens Cap es incompatible con Android 11 y ya no funcionará correctamente.</string>
+    <string name="warning_android_10">Lens Cap no es compatible con Android 11 (actualmente tienes Android 10). Asegúrese de volver a habilitar las cámaras o desinstalar Lens Cap antes de actualizar a Android 11. Si no lo hace, las cámaras pueden permanecer deshabilitadas y no hay forma de volver a habilitarlas.</string>
+    <string name="warning_android_10_title">Advertencia sobre la próxima actualización de Android 11</string>
 
 
 </resources>

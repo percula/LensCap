@@ -37,5 +37,8 @@
 	<string name="donate_thank_you">Grazie per avermi supportato! È rock!</string>
 	<string name="thumbs_up">Evviva!</string>
     <string name="info">Info</string>
+    <string name="warning_android_11">Purtroppo il copriobiettivo non è compatibile con Android 11 e non funzionerà più correttamente.</string>
+	<string name="warning_android_10">Il copriobiettivo non è compatibile con Android 11 (attualmente sei su Android 10). Assicurati di riattivare le fotocamere o disinstallare il copriobiettivo prima di eseguire l\'aggiornamento ad Android 11. Se non lo fai, le fotocamere potrebbero rimanere disabilitate senza alcun modo per riattivarle.</string>
+	<string name="warning_android_10_title">Avviso sull\'imminente aggiornamento di Android 11</string>
 
 </resources>

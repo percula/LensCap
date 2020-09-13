@@ -38,5 +38,8 @@
 	<string name="donate_thank_you">谢谢你对我的支持 ！你摇滚 ！</string>
 	<string name="thumbs_up">竖起大拇指 ！</string>
     <string name="info">信息</string>
+    <string name="warning_android_11">不幸的是，鏡頭蓋與Android 11不兼容，並且將無法正常運行。</string>
+	<string name="warning_android_10">鏡頭蓋與Android 11不兼容（您當前使用的是Android 10）。 在更新到Android 11之前，請確保重新啟用相機或卸載Lens Cap。否則，相機可能會保持禁用狀態，無法重新啟用。</string>
+	<string name="warning_android_10_title">關於即將發布的Android 11更新的警告</string>
 
 </resources>

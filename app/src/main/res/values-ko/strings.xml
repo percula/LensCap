@@ -50,5 +50,8 @@
     <string name="donate_thank_you">"저를지지 해 주셔서 감사합니다! 당신은 바위!"</string>
     <string name="thumbs_up">"ㅊ"</string>
     <string name="info">정보</string>
+    <string name="warning_android_11">안타깝게도 렌즈 캡은 Android 11과 호환되지 않으며 더 이상 제대로 작동하지 않습니다.</string>
+    <string name="warning_android_10">렌즈 캡은 Android 11과 호환되지 않습니다 (현재 Android 10 사용 중). Android 11로 업데이트하기 전에 카메라를 다시 활성화하거나 렌즈 캡을 제거했는지 확인하십시오. 이렇게하지 않으면 다시 활성화 할 방법없이 카메라가 비활성화 된 상태로 남아있을 수 있습니다.</string>
+    <string name="warning_android_10_title">예정된 Android 11 업데이트에 대한 경고</string>
 
 </resources>

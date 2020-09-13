@@ -50,5 +50,8 @@
     <string name="donate_thank_you">"Спасибо за поддержку меня! Ты жжешь!"</string>
     <string name="thumbs_up">"Большой палец вверх!"</string>
     <string name="info">Информация</string>
+    <string name="warning_android_11">К сожалению, крышка объектива несовместима с Android 11 и больше не будет работать должным образом.</string>
+    <string name="warning_android_10">Крышка объектива несовместима с Android 11 (в настоящее время вы используете Android 10). Убедитесь, что вы повторно включили камеры или удалили крышку объектива перед обновлением до Android 11. Если вы этого не сделаете, камеры могут оставаться отключенными без возможности повторного включения.</string>
+    <string name="warning_android_10_title">Предупреждение о грядущем обновлении Android 11</string>
 
 </resources>

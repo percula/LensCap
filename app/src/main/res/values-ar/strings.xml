@@ -38,5 +38,8 @@
 	<string name="donate_thank_you">شكرا لدعم لي! أنت الصخرة!</string>
 	<string name="thumbs_up">ممتاز!</string>
     <string name="info">معلومات</string>
+    <string name="warning_android_11">للأسف ، فإن غطاء العدسة غير متوافق مع Android 11 ولن يعمل بشكل صحيح.</string>
+	<string name="warning_android_10">غطاء العدسة غير متوافق مع Android 11 (أنت حاليًا تستخدم Android 10). تأكد من إعادة تمكين الكاميرات أو إلغاء تثبيت Lens Cap قبل التحديث إلى Android 11. إذا لم تقم بذلك ، فقد تظل الكاميرات معطلة بدون أي وسيلة لإعادة التمكين.</string>
+	<string name="warning_android_10_title">تحذير بشأن تحديث Android 11 القادم</string>
 
 </resources>

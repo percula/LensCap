@@ -38,5 +38,8 @@
 	<string name="donate_thank_you">Obrigado por me apoiar! Você é demais!</string>
 	<string name="thumbs_up">Polegares para cima!</string>
     <string name="info">Info</string>
+    <string name="warning_android_11">Infelizmente, a tampa da lente é incompatível com o Android 11 e não funcionará mais corretamente.</string>
+	<string name="warning_android_10">A tampa da lente não é compatível com Android 11 (atualmente você está no Android 10). Certifique-se de reativar as câmeras ou desinstalar a tampa da lente antes de atualizar para o Android 11. Se você não fizer isso, as câmeras podem permanecer desativadas sem nenhuma forma de reativação.</string>
+	<string name="warning_android_10_title">Aviso sobre a próxima atualização do Android 11</string>
 
 </resources>

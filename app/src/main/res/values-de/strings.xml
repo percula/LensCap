@@ -37,5 +37,8 @@
 	<string name="donate_thank_you">Vielen Dank für Ihre Unterstützung! Sie rocken!</string>
 	<string name="thumbs_up">Daumen nach oben!</string>
     <string name="info">Info</string>
+    <string name="warning_android_11">Leider ist Lens Cap nicht mit Android 11 kompatibel und funktioniert nicht mehr richtig.</string>
+	<string name="warning_android_10">Lens Cap ist nicht mit Android 11 kompatibel (Sie verwenden derzeit Android 10). Stellen Sie sicher, dass Sie die Kameras erneut aktivieren oder Lens Cap deinstallieren, bevor Sie auf Android 11 aktualisieren. Wenn Sie dies nicht tun, bleiben die Kameras möglicherweise deaktiviert, ohne dass eine erneute Aktivierung möglich ist.</string>
+	<string name="warning_android_10_title">Warnung vor dem bevorstehenden Android 11-Update</string>
 
 </resources>

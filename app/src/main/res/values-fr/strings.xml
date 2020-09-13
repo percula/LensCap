@@ -38,5 +38,8 @@
 	<string name="donate_thank_you">Merci de me soutenir ! </string>
 	<string name="thumbs_up">Thumbs up !</string>
 	<string name="info">Info</string>
+    <string name="warning_android_11">Malheureusement, Lens Cap est incompatible avec Android 11 et ne fonctionnera plus correctement.</string>
+	<string name="warning_android_10">Le capuchon d\'objectif n\'est pas compatible avec Android 11 (vous êtes actuellement sur Android 10). Assurez-vous de réactiver les caméras ou de désinstaller Lens Cap avant de mettre à jour vers Android 11. Si vous ne le faites pas, les caméras peuvent rester désactivées sans aucun moyen de les réactiver.</string>
+	<string name="warning_android_10_title">Avertissement concernant la prochaine mise à jour d\'Android 11</string>
 
 </resources>

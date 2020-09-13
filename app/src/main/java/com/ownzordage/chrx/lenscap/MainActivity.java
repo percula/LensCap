@@ -6,9 +6,11 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -44,6 +46,7 @@ import static com.ownzordage.chrx.lenscap.LensCapActivator.disableDeviceAdmin;
 public class MainActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
+    private static final String ANDROID_11_WARNING_KEY = "android_11_warning_key";
 
     Context mContext;
 
@@ -124,12 +127,32 @@ public class MainActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= 30) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Unfortunately Lens Cap is incompatible with Android 11 and will no longer function properly.")
+            builder.setMessage(R.string.warning_android_11)
                     .setTitle(R.string.uninstall)
                     .setPositiveButton(R.string.uninstall, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             uninstall();
+                        }
+                    })
+                    .create().show();
+        }
+
+        if (Build.VERSION.SDK_INT == 29 &&
+                !PreferenceManager.getDefaultSharedPreferences(this).getBoolean(ANDROID_11_WARNING_KEY, false)) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(R.string.warning_android_10)
+                    .setTitle(R.string.warning_android_10_title)
+                    .setPositiveButton(R.string.uninstall, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            uninstall();
+                        }
+                    })
+                    .setNeutralButton(R.string.OK, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            PreferenceManager.getDefaultSharedPreferences(MainActivity.this).edit().putBoolean(ANDROID_11_WARNING_KEY, true).apply();
                         }
                     })
                     .create().show();

@@ -38,5 +38,8 @@
 	<string name="donate_thank_you">私を支えてくれてありがとう!あなたは揺れ動きます!</string>
 	<string name="thumbs_up">親指!</string>
     <string name="info">情報</string>
+    <string name="warning_android_11">残念ながらレンズキャップはAndroid 11と互換性がなく、正しく機能しなくなります。</string>
+	<string name="warning_android_10">レンズキャップはAndroid 11と互換性がありません（現在Android 10を使用しています）。 Android 11にアップデートする前に、カメラを再度有効にするかレンズキャップをアンインストールしてください。これを行わないと、カメラを無効のままにして、再度有効にすることができません。</string>
+	<string name="warning_android_10_title">今後のAndroid 11アップデートに関する警告</string>
 
 </resources>

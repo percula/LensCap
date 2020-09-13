@@ -36,6 +36,10 @@
     <string name="admin_receiver_status_disable_warning">Deactivate Lens Cap\'s device administrator permissions?</string>
     <string name="admin_receiver_status_disabled">Lens Cap device administrator deactivated</string>
 
+    <string name="warning_android_11">Unfortunately Lens Cap is incompatible with Android 11 and will no longer function properly.</string>
+    <string name="warning_android_10">Lens Cap is not compatible with Android 11 (you\'re currently on Android 10).   Make sure you re-enable cameras or uninstall Lens Cap before updating to Android 11. If you don\'t do this, the cameras may remain disabled with no way to re-enable.</string>
+    <string name="warning_android_10_title">Warning about upcoming Android 11 update</string>
+
     <!--Widget Strings-->
     <string name="appwidget_content_description">Toggle Lens Cap on or off</string>
 
